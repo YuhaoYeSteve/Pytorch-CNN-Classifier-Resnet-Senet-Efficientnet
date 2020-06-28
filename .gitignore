@@ -1,0 +1,7 @@
+*.zip
+*.pth
+*.state_dict
+*.jpg
+*.png
+*.vscode
+*.idea
