@@ -6,7 +6,8 @@ from utils_coleection.net_utils import get_time, gen_plot, hflip_batch, separate
 from data.bigblue_dataset import DataSet
 from tqdm import tqdm
 
-img = cv2.imread()
+from init_visdom import init_visdom_
+vis = init_visdom_(window_name="train_centernet_test")
 
 class Evaltor(object):
     def __init__():
@@ -16,31 +17,17 @@ class Trainer(object):
     def __init__(self):
 
         # -------------------------------   Init Network  ----------------------------------#
-        self.model = GeneralFeatureExtractor()
+        self.model = 
         
         # -------------------------------   Set Optimizer ----------------------------------#
-        paras_only_bn, paras_wo_bn = separate_bn_paras(self.model.backbone)
 
-        
-        if config.model_type == "mobilfacenet":
-            self.optimizer = optim.SGD([
-                                {'params': paras_wo_bn[:-1], 'weight_decay': 4e-5},
-                                {'params': [paras_wo_bn[-1]] + [self.model.head.kernel], 'weight_decay': 4e-4},
-                                {'params': paras_only_bn}
-                            ], lr = config.lr, momentum = config.momentum)
-        else:
-            self.optimizer = optim.SGD([
-                                {'params': paras_wo_bn + [self.model.head.kernel], 'weight_decay': 5e-4},
-                                {'params': paras_only_bn}
-                            ], lr = config.lr, momentum = config.momentum)
 
         # -------------------------------   Set Dataset  ----------------------------------#
         self.train_data = DataSet(config, if_training=True)
         self.train_loader = DataLoader(self.train_data, batch_size=config.batch_size, shuffle=True, pin_memory=True, num_workers=config.num_workers)
     
     def train(self):
-        self.model.backbone.train()
-        self.model.head.train()
+        self.modeltrain()
         for epoch in range(config.train_epochs):
             bar = tqdm(iter(self.train_loader), ascii=True)
             for imgs, labels in bar:
