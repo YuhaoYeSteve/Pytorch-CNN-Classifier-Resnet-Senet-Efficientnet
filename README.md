@@ -15,7 +15,7 @@ Customized Image Classifier based on Pytorch with visdom visualization Support c
 
 ## References
 
-1. lukemelas, EfficientNet-PyTorch: https://github.com/lukemelas/EfficientNet-PyTorch
+1. lukemelas, [EfficientNet-PyTorch](https://github.com/lukemelas/EfficientNet-PyTorch): https://github.com/lukemelas/EfficientNet-PyTorch
 
 2. Mingxing Tan, Quoc V. Le EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks：https://arxiv.org/pdf/1905.11946.pdf
 
