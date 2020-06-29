@@ -1,7 +1,19 @@
+# 压缩包
 *.zip
+*.rar
+
+# 深度学习模型
 *.pth
 *.state_dict
+*.log
+
+# 图片
 *.jpg
 *.png
+
+# IDE工程文件
 *.vscode
 *.idea
+
+# 文件夹
+/dataset/
