@@ -3,15 +3,13 @@ Customized Image Classifier based on Pytorch with visdom visualization Support c
 
 ## Highlights
 
-- **Automatic Mixed Precision Training:** Support.
+- **Automatic Mixed Precision Training:** Support FP16 training based on NVIDIA-Apex(https://github.com/NVIDIA/apex) which can help you training with 2x batch size as well as speed up training time.
 
-- **Multi-GPU Training:** The same framework works for object detection, 3d bounding box estimation, and multi-person pose estimation with minor modification.
+- **Multi-GPU Training:** Support single server multi-GPU training based on Pytorch nn.DataParallel module.
 
-- **Fast:** The whole process in a single network feedforward. No NMS post processing is needed. Our DLA-34 model runs at *52* FPS with *37.4* COCO AP.
+- **ONNX And TensorRT Transfer Included:** Support transfer from trained *.pth* model to ONNX model which will be transfered to TensorRT trt model; Support C++ inference code.
 
-- **Strong**: Our best single model achieves *45.1*AP on COCO test-dev.
 
-- **Easy to use:** We provide user friendly testing API and webcam demos.
 
 
 
