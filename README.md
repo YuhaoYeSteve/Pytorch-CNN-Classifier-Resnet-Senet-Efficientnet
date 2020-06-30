@@ -7,6 +7,8 @@ Customized Image Classifier based on Pytorch with visdom visualization Support c
 
 - **Multi-GPU Training:** Support single server multi-GPU training based on Pytorch nn.DataParallel module.
 
+- **Training Process Visualization:** Support visualize augmentation result and prediction result in browser based on [visdom]().
+
 - **[ONNX](https://github.com/onnx/onnx) And [TensorRT](https://github.com/NVIDIA/TensorRT) Transfer Included:** Support transfer from trained *.pth* model to ONNX model which will be transfered to TensorRT *.trt* model; Support C++ inference code.
 
 

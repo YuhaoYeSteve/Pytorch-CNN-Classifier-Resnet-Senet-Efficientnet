@@ -1,11 +1,3 @@
-from torch import optim
-from torch.utils.data import DataLoader
-from config.config_big_blue import config_bb as config
-from feature_extractor import GeneralFeatureExtractor
-from utils_coleection.net_utils import get_time, gen_plot, hflip_batch, separate_bn_paras
-from data.bigblue_dataset import DataSet
-from tqdm import tqdm
-
 from init_visdom import init_visdom_
 vis = init_visdom_(window_name="train_centernet_test")
 
