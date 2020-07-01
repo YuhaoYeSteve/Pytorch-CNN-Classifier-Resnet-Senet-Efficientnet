@@ -1,13 +1,9 @@
 class Config:
-    def __init__(self, sku_list, model_id):
+    def __init__(self):
 
-        #Cifar-10
-        # -------------------------------   超参  ----------------------------------#
-        self.model_name = "efficientnet-b0"
-        # self.model_name = "resnet50"
-        self.sku_list = sku_list
-        self.class_num = len(self.sku_list)
-        self.model_id = model_id
+        # ---------------------------   Hyper-Parameter  ------------------------------#
+        
+        self.model_name = "efficientnet-b0" # "resnet50"/ SeNet / "efficientnet-b0"
         self.train_epoch = 100
 
         self.best_acc = 0.0
@@ -16,7 +12,7 @@ class Config:
         self.input_size = 224  
         self.mean = [0.408, 0.447, 0.47]
         self.std = [0.289, 0.274, 0.278]
-        self.mapfile_and_trt_model_out_root = "./train_out/"  # mapfile: 网络输出类别和实际数据类别名称的对照的json文件
+        self.model_and_training_info_save_root = "./train_out/"  # 
         self.mix_up_alpha = 0.2
         self.print_loss_interval = 100
         self.print_loss_remainder = 99
@@ -24,23 +20,23 @@ class Config:
         self.class_weight = []
         self.pretrain_model_path = ""
 
-        # -------------------------------   开关  ----------------------------------#
-        # mix up的 开关
+        # -------------------------------   Switch  ----------------------------------#
+        # if use mix up 
         self.use_mix_up = False
 
-        # label_smoothing loss的 开关
+        # if use label_smoothing on loss
         self.use_label_smoothing = False
 
-        # 加载针对数据集的预训练模型的 开关
+        # if use class specified pre-trained model
         self.load_dataset_specified_pre_train = False
 
-        # 使用Apex混合精度训练的 开关
+        # if use Apex FP16 training
         self.use_apex_amp_mix_precision = True
 
-        # cudnn加速的 开关
+        # if use cudnn Accleration
         self.use_cudnn_accelerate = True
 
-        # 设置随机种子的 开关
+        # if use random seed(better for doing experiment)
         self.set_seed = True
 
         # 单机多卡的 开关
@@ -91,3 +87,14 @@ class Config:
 
 # 0.01第二轮就飞了，test_acc=0.1
 # 0.0001 第一轮93, 第二轮95, 第三轮96
+
+class TaskConfig(Config):
+    def __init__(self):
+        super(TaskConfig, self).__init__()
+        self.train_data_root = "./dataset/cifar10/train"
+        self.val_data_root = "./dataset/cifar10/val"
+        self.training_name = "cifar10_efficientnet_b0_224_224"
+        
+if __name__ == "__main__":
+    config = TaskConfig()
+    print(config.lr_schedule)
