@@ -39,27 +39,24 @@ class Config:
         # if use random seed(better for doing experiment)
         self.set_seed = True
 
-        # 单机多卡的 开关
+        # if use multiple GPU
         self.use_multi_gpu = True
 
-        # 是否有验证集的 开关
-        self.if_has_val_data = False
-
+        # if use warm-up leanring rate
         self.if_warmup = False
 
-        # -------------------------------   选择  ----------------------------------#
+        # -------------------------------   Choice  ----------------------------------#
 
-        # 优化器的 选择
+        # Choose optimizer
         self.which_optimizer = "adam"  # "adam" or "sgd"
-        # 保存模型策略的 选择
-        self.save_strategy = "best"  # "best" or "last"
-        # 显卡的 选择
+
+        # Choose GPU number
         if self.use_multi_gpu:
-            # self.gpu_num = [3, 4, 5, 6]  # 多卡
-            # self.gpu_num = [4, 5, 6, 7]  # 多卡
-            self.gpu_num = [1, 2, 3]  # 多卡
+            # self.gpu_num = [3, 4, 5, 6]  # Multiple GPU
+            # self.gpu_num = [4, 5, 6, 7]  # Multiple GPU
+            self.gpu_num = [1, 2, 3]  # Multiple GPU
         else:
-            self.gpu_num = "1"  # 单卡
+            self.gpu_num = "1"  # Single GPU
 
         if self.if_warmup:
             # warmup
@@ -97,4 +94,4 @@ class TaskConfig(Config):
         
 if __name__ == "__main__":
     config = TaskConfig()
-    print(config.lr_schedule)
+    print(config.training_name)
