@@ -1,4 +1,5 @@
 import cv2
+import numpy as np
 
 # 读取图片
 def read_image(path):

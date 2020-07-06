@@ -84,5 +84,5 @@ Customized Image Classifier based on Pytorch with visdom visualization Support c
 
 2. Mingxing Tan, Quoc V. Le EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks：https://arxiv.org/pdf/1905.11946.pdf
 
-
+3. albumentations-team, Albumentations: https://github.com/albumentations-team/albumentations
 
