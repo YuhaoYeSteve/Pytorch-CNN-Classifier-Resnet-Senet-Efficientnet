@@ -11,6 +11,8 @@ Customized Image Classifier based on Pytorch with visdom visualization Support c
 
 - **[ONNX](https://github.com/onnx/onnx) And [TensorRT](https://github.com/NVIDIA/TensorRT) Transfer Included:** Support transfer from trained *.pth* model to ONNX model which will be transfered to TensorRT *.trt* model; Support C++ inference code.
 
+- **Annotation Tool Included:** Provide a pure Python annotation tool which can support bounding box and point, Support both Windows and Linux.
+
 ## Training
 
 ### 1. Prepare your dataset
