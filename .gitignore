@@ -18,3 +18,4 @@
 
 # 文件夹
 /dataset/
+/__pycache__/

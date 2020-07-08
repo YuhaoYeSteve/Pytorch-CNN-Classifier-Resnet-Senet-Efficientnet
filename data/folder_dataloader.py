@@ -84,7 +84,10 @@ class DataSet(data.Dataset):
         if not os.path.exists(img_path):
             raise ValueError("{} not exist".format(img_path))
         origin_img = read_image(img_path)
-        aug_img = self.transform(image=origin_img)['image']
+        if self.is_training:
+            aug_img = self.transform(image=origin_img)['image']
+        else:
+            aug_img = origin_img
 
         if self.if_debug:
             cv2.imshow("origin_img", origin_img)
@@ -92,7 +95,7 @@ class DataSet(data.Dataset):
             if cv2.waitKey() & 0xFF == ord('q'):
                 cv2.destroyAllWindows()
 
-        return T.to_tensor(aug_img), torch.from_numpy(np.array(int(label))), origin_img
+        return T.to_tensor(aug_img), torch.from_numpy(np.array(int(label))), aug_img, origin_img
 
     def __len__(self):
         return len(self.img_path_and_label_list)

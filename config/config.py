@@ -1,6 +1,6 @@
 import albumentations as A
 import cv2
-
+import os
 
 class Config:
     def __init__(self):
@@ -99,6 +99,7 @@ class TaskConfig(Config):
         self.train_data_root = "./dataset/cifar10/train"
         self.val_data_root = "./dataset/cifar10/val"
         self.training_name = "cifar10_efficientnet_b0_224_224"
+        self.log_file_path = os.path.join()
         self.transform = A.Compose([
             A.RandomRotate90(),
             A.Flip(),

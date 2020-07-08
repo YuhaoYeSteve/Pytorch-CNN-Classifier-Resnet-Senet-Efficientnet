@@ -1,5 +1,6 @@
 import torch
 from tqdm import tqdm
+import torch.optim as optim
 from config.config import TaskConfig
 from init_visdom import init_visdom_
 from network.efficientnet_pytorch import EfficientNet
@@ -9,16 +10,25 @@ vis = init_visdom_(window_name="train_centernet_test")
 
 class Evaltor(object):
     def __init__():
-        pass
+        # ---------------------------------  Set Val Set  --------------------------------#
+        self.val_data = DataSet(config.val_data_root, if_training=False)
+        self.val_loader = torch.utils.data.DataLoader(self.val_data, batch_size=config.batch_size,
+                                                      shuffle=True, pin_memory=True, num_workers=config.num_workers)
 
 
 class Trainer(object):
     def __init__(self):
-
-        # -------------------------------    Set Dataset  ----------------------------------#
-        self.train_data = DataSet(config, if_training=True)
+        # -------------------------------   Set Random Sed   -------------------------------#
+        if config.set_seed:
+            seed_torch()
+            logger.debug("Set Random Sed")
+        # -------------------------------  Set Training Set  ------------------------------#
+        # train
+        self.train_data = DataSet(config.train_data_root, if_training=True)
         self.train_loader = torch.utils.data.DataLoader(self.train_data, batch_size=config.batch_size,
                                                         shuffle=True, pin_memory=True, num_workers=config.num_workers)
+        # --------------------------------  Set Evaltor   ----------------------------------#
+        self.evaltor = Evaltor()
 
         # -------------------------------   Init Network  ----------------------------------#
         if "efficientnet" in config.model_name:
@@ -26,6 +36,13 @@ class Trainer(object):
                 config.gpu_num[0])
 
         # -------------------------------   Set Optimizer ----------------------------------#
+        # Use SGD
+        if config.which_optimizer == "sgd":
+            optimizer = torch.optim.SGD(
+                self.model.parameters(), lr=config.base_lr, momentum=0.9, weight_decay=1e-5)
+        # Use ADAM
+        elif config.which_optimizer == "adam":
+            optimizer = optim.Adam(self.model.parameters(), lr=config.base_lr)
 
     def train(self):
         self.model.train()
