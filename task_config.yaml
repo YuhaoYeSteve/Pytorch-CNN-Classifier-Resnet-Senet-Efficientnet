@@ -1,0 +1,2 @@
+dataset_root_path: /data/yyh/classify/data/cat_dog
+train_size: 224
