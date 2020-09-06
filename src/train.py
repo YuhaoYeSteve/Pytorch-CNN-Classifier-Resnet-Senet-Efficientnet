@@ -13,7 +13,7 @@ import time
 
 class Evaltor(object):
     def __init__(self, config):
-        # ---------------------------------  Set Val Set  --------------------------------#
+        # ---------------------------------  Set Val Set    --------------------------------#
         self.val_data = DataSet(config.val_data_root,
                                 config.transform, config, if_training=False)
         self.val_loader = torch.utils.data.DataLoader(self.val_data, batch_size=config.batch_size,
