@@ -5,6 +5,8 @@ import torch
 import shutil
 import numpy as np
 import yaml
+from torch.autograd import Variable
+
 
 
 # ---------------------------   Time  ------------------------------#
@@ -149,22 +151,59 @@ def log_dict(dictionaries, format_, logger):
         logger.info(contant)
 
 
-def add_data_to_cuda(ret, config):
+def add_data_to_cuda(ret, config, if_training=False):
     if config.use_multi_gpu:
-        ret["img"] = ret["img"].cuda(config.gpu_num[0])
-        ret["label"] = ret["label"].cuda(config.gpu_num[0])
-        index = torch.randperm(ret["img"].size(0)).cuda(config.gpu_num[0])
+        ret["imgs"] = ret["imgs"].cuda(config.gpu_num[0])
+        ret["labels"] = ret["labels"].cuda(config.gpu_num[0])
+        if if_training:
+            index = torch.randperm(ret["imgs"].size(0)).cuda(config.gpu_num[0])
     else:
-        ret["img"] = ret["img"].cuda()
-        ret["label"] = ret["label"].cuda()
-        index = torch.randperm(ret["img"].size(0)).cuda()
-    return index, ret
+        ret["imgs"] = ret["imgs"].cuda()
+        ret["labels"] = ret["labels"].cuda()
+        if if_training:
+            index = torch.randperm(ret["imgs"].size(0)).cuda()
+    if if_training:
+        return index, ret
+    else:
+        return ret
 
 
 def set_lr(optimizer, lr):
     for param_group in optimizer.param_groups:
         param_group["lr"] = lr
 
+
+def save_model(config):
+    torch_model_save_path = os.path.join(config.log_and_model_path, str(config.train_epochs) + "_" + str(config.best_acc) + ".pth")
+    torch_state_dict_save_path = os.path.join(config.log_and_model_path, str(config.train_epochs) + "_" + str(config.best_acc) + ".state_dict")
+    onnx_model_save_path = os.path.join(config.log_and_model_path, str(config.train_epochs) + "_" + str(config.best_acc) + ".onnx")
+    config.best_model.eval()
+    torch.save(config.best_model, torch_model_save_path)
+    torch.save(config.best_model.state_dict(), torch_state_dict_save_path)
+    efficientnet_to_onnx(config.best_model, config, onnx_model_save_path)
+
+
+def efficientnet_to_onnx(model, config, onnx_model_save_path):
+    if config.use_multi_gpu:
+        model = model.module
+    if "efficientnet" in config.model_name:
+        model.set_swish(memory_efficient=False)
+    model.eval()
+    model = model.cpu()
+    # if config.use_apex_amp_mix_precision:
+    #     print("*"*60)
+    #     apex_torch_model_path = save_path + "apex_temp_torch_model.pth"
+    #     torch.save(apex_torch_model_path, model)
+    #
+    #     model = torch.load(apex_torch_model_path)
+    #     model.eval()
+    #     print("*" * 60)
+
+    dummy_input = Variable(torch.randn(
+        10, 3, config.input_size, config.input_size))
+    torch.onnx.export(model, dummy_input, onnx_model_save_path, verbose=True)
+    info = "Save onnx model to {}".format(onnx_model_save_path)
+    config.logger.info(info)
 
 if __name__ == "__main__":
     log_path = "./1.txt"

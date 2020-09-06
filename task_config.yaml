@@ -1,2 +1,5 @@
 dataset_root_path: /data/yyh/classify/data/cat_dog
+train_epochs: 50
 train_size: 224
+model_ready_acc: 0.99
+model_ready_epoch: 25

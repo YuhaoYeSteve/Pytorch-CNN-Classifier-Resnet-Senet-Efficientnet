@@ -1,23 +1,48 @@
-import torch
-from tqdm import tqdm
-from torchvision import models
-import torch.optim as optim
-from config.config import TaskConfig
-from network.efficientnet_pytorch import EfficientNet
-from data.folder_dataloader import DataSet
-from utils.general_utils import seed_torch, build_class_info_dict, save_class_info, update_print_loss_interval, add_data_to_cuda, set_lr
-from utils.img_utils import visual_training_process
-import torch.nn as nn
 import time
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torchvision import models
+from config.config import TaskConfig
+from data.folder_dataloader import DataSet
+from utils.img_utils import visual_process
+from network.efficientnet_pytorch import EfficientNet
+from utils.general_utils import seed_torch, build_class_info_dict, save_class_info, update_print_loss_interval, add_data_to_cuda, set_lr, save_model
 
 
-class Evaltor(object):
+class Evaluator(object):
     def __init__(self, config):
+        self.config = config
         # ---------------------------------  Set Val Set    --------------------------------#
         self.val_data = DataSet(config.val_data_root,
-                                config.transform, config, if_training=False)
+                                config.val_transform, config, if_training=False)
         self.val_loader = torch.utils.data.DataLoader(self.val_data, batch_size=config.batch_size,
-                                                      shuffle=True, pin_memory=True, num_workers=config.dataLoader_num_worker)
+                                                      shuffle=False, num_workers=config.dataLoader_num_worker)
+
+    def eval_val(self, net, epoch):
+        net = net.eval()
+        with torch.no_grad():
+            correct = 0
+            total = 0
+            for _, ret in enumerate(self.val_loader):
+                ret = add_data_to_cuda(ret, config)
+                # visual_process(self.config, ret, model="val")
+                output = net(ret["imgs"])
+                _, predicted = torch.max(output, 1)
+                total += ret["labels"].size(0)
+                correct += (predicted == ret["labels"]).sum()
+            val_acc = correct.item() / total
+
+            train_info = "One Epoch training acc: {}".format(val_acc)
+            self.config.logger.debug(train_info)
+
+            if val_acc >= self.config.best_acc:
+                self.config.best_acc = val_acc
+                self.config.best_epoch = epoch
+                self.config.best_model = net
+
+        net = net.train()
+        return net
 
 
 class Trainer(object):
@@ -35,12 +60,12 @@ class Trainer(object):
         # -------------------------------  Set Training Set   ------------------------------#
         # train
         self.train_data = DataSet(
-            config.train_data_root, config.transform, config, if_training=True)
+            config.train_data_root, config.train_transform, config, if_training=True)
         self.train_loader = torch.utils.data.DataLoader(self.train_data, batch_size=config.batch_size,
-                                                        shuffle=True,  num_workers=config.dataLoader_num_worker)
+                                                        shuffle=True, num_workers=config.dataLoader_num_worker)
         update_print_loss_interval(config, len(self.train_data))
-        # --------------------------------  Set Evaltor   ----------------------------------#
-        self.evaltor = Evaltor(config)
+        # --------------------------------  Set Evaluator   --------------------------------#
+        self.evaluator = Evaluator(config)
 
         # -------------------------------   Init Network  ----------------------------------#
         if "efficientnet" in config.model_name:
@@ -89,30 +114,27 @@ class Trainer(object):
 
     def train_epoch(self):
         for epoch in range(config.train_epochs):
+            self.net = self.net.train()
             epoch = epoch + 1
             epoch_start_time = time.time()
             # ---------------------------  Tuning Learning Rate ------------------------------#
             if epoch in config.lr_schedule:
                 use_lr = config.lr_schedule[epoch]
                 set_lr(self.optimizer, use_lr)
-            # bar = tqdm(iter(self.train_loader), ascii=True)
 
             # ----------------------------  One Epoch Training    ----------------------------#
-            # for iteration, ret in enumerate(bar):
             for iteration, ret in enumerate(self.train_loader):
                 iteration_start_time = time.time()
-                index, ret = add_data_to_cuda(ret, config)
-                if (iteration % self.config.print_loss_interval) == int(self.config.print_loss_remainder/10) or iteration == 0:
-                    visual_training_process(self.config, ret)
-                # imgs = ret["img"].cuda()
-                # labels = ret["label"].cuda()
-                # print(labels)
+                index, ret = add_data_to_cuda(ret, config, True)
 
-                # bar.set_description("label{}".format(ret["label"]))
-                # bar.update()
+                # ------------------------  Show Training Images(Visdom)  --------------------------#
+                if (iteration % self.config.print_loss_interval) == int(self.config.print_loss_remainder/10) or iteration == 0:
+                    visual_process(self.config, ret, model="train")
+
+                # ----------------------------  Forward and Backward    ----------------------------#
                 self.optimizer.zero_grad()
-                outputs = self.net(ret["img"])                # Forward
-                loss = self.loss_func(outputs, ret["label"])  # Loss
+                outputs = self.net(ret["imgs"])                # Forward
+                loss = self.loss_func(outputs, ret["labels"])  # Loss
                 loss.backward()                               # Backpropagation
                 self.optimizer.step()                         # Update Net Parameter
 
@@ -121,12 +143,26 @@ class Trainer(object):
                     train_info = '[Epoch: %d,Iteration: %d] loss:%.06f  lr= %f  time=%.02f s' % (
                         epoch, iteration + 1, loss.item() * 10, self.optimizer.param_groups[0]['lr'], one_iteration_time)
                     self.config.logger.info(train_info)
+
             one_epoch_time = "One epoch spend {} minutes!!!!".format(
                 (time.time() - epoch_start_time) / 60)
             self.config.logger.debug(one_epoch_time)
-
+            # -------------------------------  Evaluate  ----------------------------------#
+            self.net = self.evaluator.eval_val(self.net, epoch)
+            if self.config.best_acc >= config.model_ready_acc and epoch >= config.model_ready_epoch:
+                self.config.logger.info(
+                    "Val Acc{} >= {}, Early Stop !!!! Best Epoch is {}".format(self.config.best_acc, config.model_ready_acc,
+                                                                               epoch))
+                break
+        # ------------------------------  Save Model  ---------------------------------#
+        save_model(config)
 
 if __name__ == "__main__":
-    config = TaskConfig()
+    # efficientnet-b0
+    config = TaskConfig("efficientnet-b0")
+    tainer = Trainer(config)
+    tainer.train()
+    # resnet50
+    config = TaskConfig("resnet50")
     tainer = Trainer(config)
     tainer.train()

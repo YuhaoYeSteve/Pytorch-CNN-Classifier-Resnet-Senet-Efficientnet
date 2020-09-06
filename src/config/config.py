@@ -1,7 +1,7 @@
 import albumentations as A
 import cv2
 import os
-from utils.general_utils import load_yaml, get_time, check_path_with_delete
+from utils.general_utils import load_yaml, check_path_without_delete
 from utils.logctrl import getLogger
 from utils.init_visdom import init_visdom_
 
@@ -52,25 +52,22 @@ class Config:
             self.gpu_num = "1"  # Single GPU
 
         self.base_lr = 0.0001
-        self.lr_schedule = {          # learning rate strategy
-            10: self.base_lr * 0.5,
-            20: self.base_lr * 0.3,
-            25: self.base_lr * 0.1,
-            45: self.base_lr * 0.01,
-        }
+        
 
         # ---------------------------   Hyper-Parameter  ------------------------------#
         self.model_name = "efficientnet-b0"  # "resnet50"/ SeNet / "efficientnet-b0"
         self.train_epochs = 50
         self.best_acc = 0.0
+        self.best_model = ""
+        self.best_epoch = 1
         self.batch_size = len(self.gpu_num) * 32
         self.input_size = 224
-        if "efficientnet" in self.model_name:
-            self.mean = [0.408, 0.447, 0.47]
-            self.std = [0.289, 0.274, 0.278]
-        else:
-            self.mean = [0.5, 0.5, 0.5]
-            self.std = [0.5, 0.5, 0.5]
+        # if "efficientnet" in self.model_name:
+        #     self.mean = [0.408, 0.447, 0.47]
+        #     self.std = [0.289, 0.274, 0.278]
+        # else:
+        self.mean = [0.5, 0.5, 0.5]
+        self.std = [0.5, 0.5, 0.5]
         self.model_and_training_info_save_root = "./train_out/"
         self.mix_up_alpha = 0.2
         self.print_loss_interval = 100
@@ -80,33 +77,44 @@ class Config:
             self.dataLoader_num_worker = 0
             self.batch_size = 1
         self.class_weight = []
-        self.train_time = get_time()
         # --------------------------------   Path   ----------------------------------#
         self.pretrain_model_path = ""
         self.log_and_model_root = "./train_out/"
 
 
 class TaskConfig(Config):
-    def __init__(self):
+    def __init__(self, model_name):
         super(TaskConfig, self).__init__()
+        # -----------------------------   Config File   ------------------------------#
         self.task_config_path = "./task_config.yaml"
         self.task_config = self.get_task_config()
+        self.model_name = model_name
+        # --------------------------------   Path   ----------------------------------#
         self.input_size = self.task_config["train_size"]
         self.train_data_root = os.path.join(
             self.task_config["dataset_root_path"], "train")
         self.val_data_root = os.path.join(
             self.task_config["dataset_root_path"], "val")
+        # -----------------------------   Class Info   -------------------------------#
         self.task_name = self.get_task_name()
         self.class_num = len(self.task_name)
-        self.log_and_model_path = os.path.join(
-            self.log_and_model_root, self.task_name, self.train_time)
-        check_path_with_delete(self.log_and_model_path)
-        self.logger = getLogger(__name__, os.path.join(
-            self.log_and_model_path, "logs/all.log"))
-        self.vis = init_visdom_(window_name=self.task_name)
         self.class_name_list = self.get_class_name()
         self.class_id_list = [str(_) for _ in range(len(self.class_name_list))]
-        self.transform = A.Compose([
+        self.log_and_model_path = os.path.join(
+            self.log_and_model_root, self.task_name, self.model_name)
+        check_path_without_delete(self.log_and_model_path)
+        # ---------------------------   Hyper-Parameter  -----------------------------#
+        self.train_epochs = self.task_config["train_epochs"]
+        self.model_ready_acc = self.task_config["model_ready_acc"]
+        self.model_ready_epoch = self.task_config["model_ready_epoch"]
+        # -------------------------------   Logger   ---------------------------------#
+        self.logger = getLogger(__name__, os.path.join(
+            self.log_and_model_path, "logs/all.log"))
+        # -------------------------------   Visdom   ---------------------------------#
+        self.vis = init_visdom_(window_name=self.task_name)
+       
+        # -----------------------------   Augmentation   -----------------------------#
+        self.train_transform = A.Compose([
             A.RandomRotate90(),
             A.Flip(),
             A.Transpose(),
@@ -135,6 +143,12 @@ class TaskConfig(Config):
             A.HueSaturationValue(p=0.3),
             A.Resize(height=self.input_size, width=self.input_size, p=1)
         ])
+        self.val_transform = A.Resize(height=self.input_size, width=self.input_size, p=1)
+        # -------------------------  learning rate strategy   -------------------------#
+        self.lr_schedule = {                                                
+            0.4 * self.train_epochs: self.base_lr * 0.1,
+            0.8 * self.train_epochs: self.base_lr * 0.01,
+        }
 
     def get_task_config(self):
         return load_yaml(self.task_config_path)

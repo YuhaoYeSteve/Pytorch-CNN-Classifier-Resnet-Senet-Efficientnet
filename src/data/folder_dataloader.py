@@ -89,13 +89,10 @@ class DataSet(data.Dataset):
 
         if not os.path.exists(img_path):
             raise ValueError("{} not exist".format(img_path))
-        origin_img = read_image(img_path)
-        origin_img = cv2.resize(origin_img, (self.config.input_size, self.config.input_size))
-        if self.is_training:
-            aug_img = self.transform(image=origin_img)['image']
-            aug_img_show = aug_img.copy()
-        else:
-            aug_img = origin_img
+        img = read_image(img_path)
+        origin_img = cv2.resize(img.copy(), (self.config.input_size, self.config.input_size))
+        aug_img = self.transform(image=img)['image']
+        aug_img_show = aug_img.copy()
 
         if self.if_debug:
             # server debug
@@ -116,7 +113,7 @@ class DataSet(data.Dataset):
         # aug_img = aug_img.transpose(2, 0, 1)
         aug_img = aug_img.astype(np.float32)
 
-        ret = {"img": T.to_tensor(aug_img), "label": torch.from_numpy(np.array(int(label))), "aug_img": aug_img_show, "origin_img": origin_img}
+        ret = {"imgs": T.to_tensor(aug_img), "labels": torch.from_numpy(np.array(int(label))), "aug_img": aug_img_show, "origin_img": origin_img}
         return ret
 
     def __len__(self):

@@ -192,14 +192,22 @@ def video_to_stream_save(video_path="", save_name_prefix="", save_root="", save_
             break
 
 
-def visual_training_process(config, batch):
+def visual_process(config, batch, model):
     origin_img = batch["origin_img"][0].detach().numpy().copy()
     aug_img = batch["aug_img"][0].detach().numpy().copy()
-    title = '**********train_origin_img {} * {}**********'
-    win = '**********train_origin_img**********'
+    if model == "train":
+        title = '**********train_origin_img {} * {}**********'
+        win = '**********train_origin_img**********'
+    else:
+        title = '**********val_origin_img {} * {}**********'
+        win = '**********val_origin_img**********'
     visdom_show_opencv(config.vis, origin_img.copy(), title, win)
-    title = '**********train_aug_img {} * {}**********'
-    win = '**********train_aug_img**********'
+    if model == "train":
+        title = '**********train_aug_img {} * {}**********'
+        win = '**********train_aug_img**********'
+    else:
+        title = '**********val_aug_img {} * {}**********'
+        win = '**********val_aug_img**********'
     visdom_show_opencv(config.vis, aug_img.copy(), title, win)
 
 
