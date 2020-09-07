@@ -97,8 +97,9 @@ class TaskConfig(Config):
             self.task_config["dataset_root_path"], "val")
         # -----------------------------   Class Info   -------------------------------#
         self.task_name = self.get_task_name()
-        self.class_num = len(self.task_name)
         self.class_name_list = self.get_class_name()
+        self.class_num = len(self.class_name_list)
+
         self.class_id_list = [str(_) for _ in range(len(self.class_name_list))]
         self.log_and_model_path = os.path.join(
             self.log_and_model_root, self.task_name, self.model_name)

@@ -1,5 +1,6 @@
 import cv2
 import os
+import torch
 import math
 import numpy as np
 # from .pycocotools import mask as maskUtils
@@ -209,6 +210,38 @@ def visual_process(config, batch, model):
         title = '**********val_aug_img {} * {}**********'
         win = '**********val_aug_img**********'
     visdom_show_opencv(config.vis, aug_img.copy(), title, win)
+
+
+def _is_tensor_image(img):
+    return torch.is_tensor(img) and img.ndimension() == 3
+
+
+def normalize(tensor, mean, std, inplace=False):
+    """Normalize a tensor image with mean and standard deviation.
+
+    .. note::
+        This transform acts out of place by default, i.e., it does not mutates the input tensor.
+
+    See :class:`~torchvision.transforms.Normalize` for more details.
+
+    Args:
+        tensor (Tensor): Tensor image of size (C, H, W) to be normalized.
+        mean (sequence): Sequence of means for each channel.
+        std (sequence): Sequence of standard deviations for each channely.
+
+    Returns:
+        Tensor: Normalized Tensor image.
+    """
+    if not _is_tensor_image(tensor):
+        raise TypeError('tensor is not a torch image.')
+
+    if not inplace:
+        tensor = tensor.clone()
+
+    mean = torch.tensor(mean, dtype=torch.float32)
+    std = torch.tensor(std, dtype=torch.float32)
+    tensor.sub_(mean[:, None, None]).div_(std[:, None, None])
+    return tensor
 
 
 if __name__ == "__main__":

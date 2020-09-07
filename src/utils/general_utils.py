@@ -8,7 +8,6 @@ import yaml
 from torch.autograd import Variable
 
 
-
 # ---------------------------   Time  ------------------------------#
 def get_time():
     return datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
@@ -174,9 +173,12 @@ def set_lr(optimizer, lr):
 
 
 def save_model(config):
-    torch_model_save_path = os.path.join(config.log_and_model_path, str(config.train_epochs) + "_" + str(config.best_acc) + ".pth")
-    torch_state_dict_save_path = os.path.join(config.log_and_model_path, str(config.train_epochs) + "_" + str(config.best_acc) + ".state_dict")
-    onnx_model_save_path = os.path.join(config.log_and_model_path, str(config.train_epochs) + "_" + str(config.best_acc) + ".onnx")
+    torch_model_save_path = os.path.join(config.log_and_model_path, str(
+        config.train_epochs) + "_" + str(config.best_acc) + ".pth")
+    torch_state_dict_save_path = os.path.join(config.log_and_model_path, str(
+        config.train_epochs) + "_" + str(config.best_acc) + ".state_dict")
+    onnx_model_save_path = os.path.join(config.log_and_model_path, str(
+        config.train_epochs) + "_" + str(config.best_acc) + ".onnx")
     config.best_model.eval()
     torch.save(config.best_model, torch_model_save_path)
     torch.save(config.best_model.state_dict(), torch_state_dict_save_path)
@@ -204,6 +206,43 @@ def efficientnet_to_onnx(model, config, onnx_model_save_path):
     torch.onnx.export(model, dummy_input, onnx_model_save_path, verbose=True)
     info = "Save onnx model to {}".format(onnx_model_save_path)
     config.logger.info(info)
+
+
+def count_list(list_which_need_to_count, top_n=1, if_debug=False):
+    num_dic = {}
+    maximun_num_list = []
+    for i in list_which_need_to_count:  # 循环列表中的元素
+        s = set()  # 定义集合
+        if i not in s:  # 如果i不在集合中
+            num_dic[i] = list_which_need_to_count.count(i)
+
+    if if_debug:
+        for i in num_dic:
+            print("{} : {}".format(i, num_dic[i]))
+
+    if top_n < len(num_dic.keys()):
+        for i in range(top_n):
+            max_num = 0
+            max_key = 0
+            for key in num_dic:
+                if num_dic[key] > max_num:
+                    max_num = num_dic[key]
+                    max_key = key
+            num_dic.pop(max_key)
+            maximun_num_list.append(max_key)
+    else:
+        for i in range(len(num_dic.keys())):
+            max_num = 0
+            max_key = 0
+            for key in num_dic:
+                if num_dic[key] > max_num:
+                    max_num = num_dic[key]
+                    max_key = key
+            num_dic.pop(max_key)
+            maximun_num_list.append(max_key)
+
+    return maximun_num_list
+
 
 if __name__ == "__main__":
     log_path = "./1.txt"

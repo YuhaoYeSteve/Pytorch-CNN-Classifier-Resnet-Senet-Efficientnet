@@ -1,11 +1,12 @@
-from torch.utils import data
-from utils.img_utils import read_image, visdom_show_opencv
-from utils.general_utils import log_dict
-import torchvision.transforms.functional as T
 import os
 import cv2
 import torch
 import numpy as np
+from torch.utils import data
+from utils.general_utils import log_dict
+import torchvision.transforms.functional as T
+from utils.img_utils import read_image, visdom_show_opencv
+
 
 
 class DataSet(data.Dataset):
