@@ -17,5 +17,5 @@
 *.idea
 
 # 文件夹
-/dataset/
+/train_out/
 /__pycache__/

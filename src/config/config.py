@@ -1,14 +1,13 @@
 import albumentations as A
 import cv2
 import os
-from utils.general_utils import load_yaml, check_path_without_delete
 from utils.logctrl import getLogger
 from utils.init_visdom import init_visdom_
+from utils.general_utils import load_yaml, check_path_without_delete
 
 
 class Config:
     def __init__(self):
-
         # -------------------------------   Switch  ----------------------------------#
         # if use visdom
         self.use_visdom = True
@@ -46,13 +45,12 @@ class Config:
         # Choose GPU number
         if self.use_multi_gpu:
             # self.gpu_num = [3, 4, 5, 6]  # Multiple GPU
-            # self.gpu_num = [4, 5, 6, 7]  # Multiple GPU
-            self.gpu_num = [2, 3, 4, 5]  # Multiple GPU
+            self.gpu_num = [4, 5, 6, 7]  # Multiple GPU
+            # self.gpu_num = [0, 1, 2, 3]  # Multiple GPU
         else:
             self.gpu_num = "1"  # Single GPU
 
-        self.base_lr = 0.0001
-        
+        self.base_lr = 0.001
 
         # ---------------------------   Hyper-Parameter  ------------------------------#
         self.model_name = "efficientnet-b0"  # "resnet50"/ SeNet / "efficientnet-b0"
@@ -60,14 +58,14 @@ class Config:
         self.best_acc = 0.0
         self.best_model = ""
         self.best_epoch = 1
-        self.batch_size = len(self.gpu_num) * 32
+        self.batch_size = len(self.gpu_num) * 64
         self.input_size = 224
-        # if "efficientnet" in self.model_name:
-        #     self.mean = [0.408, 0.447, 0.47]
-        #     self.std = [0.289, 0.274, 0.278]
-        # else:
-        self.mean = [0.5, 0.5, 0.5]
-        self.std = [0.5, 0.5, 0.5]
+        if "efficientnet" in self.model_name:
+            self.mean = [0.408, 0.447, 0.47]
+            self.std = [0.289, 0.274, 0.278]
+        else:
+            self.mean = [0.5, 0.5, 0.5]
+            self.std = [0.5, 0.5, 0.5]
         self.model_and_training_info_save_root = "./train_out/"
         self.mix_up_alpha = 0.2
         self.print_loss_interval = 100
@@ -89,6 +87,9 @@ class TaskConfig(Config):
         self.task_config_path = "./task_config.yaml"
         self.task_config = self.get_task_config()
         self.model_name = model_name
+        self.efficientnet_pre_train_path = self.task_config["efficientnet_pre_train_path"]
+        self.resnet_pre_train_path = self.task_config["resnet_pre_train_path"]
+        self.gpu_num = [int(_) for _ in self.task_config["gpu_num"].split(",")] 
         # --------------------------------   Path   ----------------------------------#
         self.input_size = self.task_config["train_size"]
         self.train_data_root = os.path.join(
@@ -112,43 +113,51 @@ class TaskConfig(Config):
         self.logger = getLogger(__name__, os.path.join(
             self.log_and_model_path, "logs/all.log"))
         # -------------------------------   Visdom   ---------------------------------#
-        self.vis = init_visdom_(window_name=self.task_name)
-       
+        if self.use_visdom:
+            self.vis = init_visdom_(window_name=self.task_name)
         # -----------------------------   Augmentation   -----------------------------#
         self.train_transform = A.Compose([
-            A.RandomRotate90(),
-            A.Flip(),
-            A.Transpose(),
+            # A.RandomRotate90(),
+            # A.Flip(p=0.5),
+            A.HorizontalFlip(p=1),
+            A.Transpose(p=1),
             A.OneOf([
                 A.IAAAdditiveGaussianNoise(),
                 A.GaussNoise(),
-            ], p=0.2),
+            ], p=1),
             A.OneOf([
-                A.MotionBlur(p=.2),
-                A.MedianBlur(blur_limit=3, p=0.1),
-                A.Blur(blur_limit=3, p=0.1),
-            ], p=0.2),
+                A.MotionBlur(),
+                A.MedianBlur(blur_limit=3),
+                A.Blur(blur_limit=3),
+            ], p=1),
             A.ShiftScaleRotate(shift_limit=0.0625,
-                               scale_limit=0.2, rotate_limit=45, p=0.2),
+                               scale_limit=0.2, rotate_limit=45, p=1),
             A.OneOf([
-                A.OpticalDistortion(p=0.3),
-                A.GridDistortion(p=.1),
-                A.IAAPiecewiseAffine(p=0.3),
-            ], p=0.2),
+                A.OpticalDistortion(),
+                A.GridDistortion(),
+                A.IAAPiecewiseAffine(),
+            ], p=1),
             A.OneOf([
                 A.CLAHE(clip_limit=2),
                 A.IAASharpen(),
                 A.IAAEmboss(),
                 A.RandomBrightnessContrast(),
-            ], p=0.3),
-            A.HueSaturationValue(p=0.3),
+            ], p=1),
+            A.HueSaturationValue(p=1),
             A.Resize(height=self.input_size, width=self.input_size, p=1)
         ])
-        self.val_transform = A.Resize(height=self.input_size, width=self.input_size, p=1)
+        self.val_transform = A.Resize(
+            height=self.input_size, width=self.input_size, p=1)
         # -------------------------  learning rate strategy   -------------------------#
-        self.lr_schedule = {                                                
-            0.4 * self.train_epochs: self.base_lr * 0.1,
-            0.8 * self.train_epochs: self.base_lr * 0.01,
+        self.lr_schedule = {
+            # 0.1 * self.train_epochs: self.base_lr * 0.1,
+            # 0.5 * self.train_epochs: self.base_lr * 0.01,
+            # 0.8 * self.train_epochs: self.base_lr * 0.001,
+            5: 0.0001,
+            10: 0.00001,
+            50: self.base_lr * 0.1,
+            100: self.base_lr * 0.01,
+
         }
 
     def get_task_config(self):

@@ -185,6 +185,16 @@ def save_model(config):
     efficientnet_to_onnx(config.best_model, config, onnx_model_save_path)
 
 
+# def load_model(model, state_dict):
+#     new_model = model.state_dict()
+#     new_keys = list(new_model.keys())
+#     old_keys = list(state_dict.keys())
+#     restore_dict = OrderedDict()
+#     for id in range(len(new_keys)):
+#         restore_dict[new_keys[id]] = state_dict[old_keys[id]]
+#     model.load_state_dict(restore_dict)
+
+
 def efficientnet_to_onnx(model, config, onnx_model_save_path):
     if config.use_multi_gpu:
         model = model.module
@@ -240,9 +250,16 @@ def count_list(list_which_need_to_count, top_n=1, if_debug=False):
                     max_key = key
             num_dic.pop(max_key)
             maximun_num_list.append(max_key)
-
     return maximun_num_list
 
+
+def load_model(checkpoint_path, model):
+    checkpoint = torch.load(
+        checkpoint_path, map_location=lambda storage, loc: storage)
+    if isinstance(checkpoint, torch.nn.DataParallel):
+        checkpoint = checkpoint.module
+    state_dict = {}
+    model.load_state_dict(state_dict, strict=False)
 
 if __name__ == "__main__":
     log_path = "./1.txt"

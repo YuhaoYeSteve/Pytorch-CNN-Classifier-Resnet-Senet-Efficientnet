@@ -18,9 +18,9 @@ size = (224, 224)
 sku_name_list = []
 
 train_out_root = "./train_out/cat_dog/efficientnet-b0"
-task_name = train_out_root.split("/")[-2]
 test_img_root = "/data/yyh/classify/data/cat_dog/val"
 model_path = os.path.join(train_out_root, "20_0.99125.pth")
+task_name = train_out_root.split("/")[-2]
 
 net = torch.load(model_path, map_location='cuda:0')
 print("Load model: {}".format(model_path))
@@ -33,9 +33,9 @@ with open(anno_path, "r") as mapfile:
 for info in label_name_relation["info"]:
     sku_name_list.append(info["name"])
 
-if_show = False
+if_show = True
 if_break_single_good = False
-show_wrong_stop = False
+show_wrong_stop = True
 show_right_stop = False
 
 
@@ -54,7 +54,6 @@ def pre_processing(img_path):
 def inference_and_show_test_pics():
 
     show_top_n_wrong = 3
-
     good_id_num_dict = {}
     good_id_acc_dict = {}
     good_id_wrong_dict = {}

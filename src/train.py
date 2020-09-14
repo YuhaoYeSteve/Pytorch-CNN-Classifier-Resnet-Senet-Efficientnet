@@ -3,11 +3,12 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torchvision import models
+from network.resnet_pytorch.resnet import resnet50
 from config.config import TaskConfig
 from data.folder_dataloader import DataSet
 from utils.img_utils import visual_process
 from network.efficientnet_pytorch import EfficientNet
-from utils.general_utils import seed_torch, build_class_info_dict, save_class_info, update_print_loss_interval, add_data_to_cuda, set_lr, save_model
+from utils.general_utils import seed_torch, build_class_info_dict, save_class_info, update_print_loss_interval, add_data_to_cuda, set_lr, save_model, load_model
 
 
 class Evaluator(object):
@@ -33,8 +34,8 @@ class Evaluator(object):
                 correct += (predicted == ret["labels"]).sum()
             val_acc = correct.item() / total
 
-            train_info = "One Epoch training acc: {}".format(val_acc)
-            self.config.logger.debug(train_info)
+            train_info = "One Epoch val acc: {}".format(val_acc)
+            self.config.logger.info(train_info)
 
             if val_acc >= self.config.best_acc:
                 self.config.best_acc = val_acc
@@ -70,7 +71,7 @@ class Trainer(object):
         # -------------------------------   Init Network  ----------------------------------#
         if "efficientnet" in config.model_name:
             if config.use_multi_gpu:
-                self.net = EfficientNet.from_pretrained(config.model_name, num_classes=config.class_num).cuda(
+                self.net = EfficientNet.from_pretrained(config.model_name, num_classes=config.class_num, weights_path=self.config.efficientnet_pre_train_path).cuda(
                     config.gpu_num[0])
                 self.net.train()
             else:
@@ -79,18 +80,19 @@ class Trainer(object):
                 self.net.train()
         elif "resnet50" in config.model_name:
             if config.use_multi_gpu:
-                self.net = models.resnet50(pretrained=True)
+                self.net = resnet50(pretrained=True, cached_file=config.resnet_pre_train_path)
                 num_ftrs = self.net.fc.in_features
-                self.net.fc = nn.Linear(num_ftrs, config.class_num)
+                self.net.fc = nn.Linear(num_ftrs, config.class_num) 
                 self.net = self.net.cuda(config.gpu_num[0])
                 self.net.train()
             else:
-                self.net = models.resnet50(pretrained=True)
+                self.net = resnet50(pretrained=True, cached_file=config.resnet_pre_train_path)
                 num_ftrs = self.net.fc.in_features
                 self.net.fc = nn.Linear(num_ftrs, config.class_num)
                 self.net = self.net.cuda()
                 self.net.train()
-
+        if self.config.load_dataset_specified_pre_train:
+            load_model(self.config.pre_train_path, self.net)
         if config.use_multi_gpu:
             self.net = nn.DataParallel(self.net, device_ids=config.gpu_num)
         # -------------------------------   Set Optimizer ----------------------------------#
@@ -128,25 +130,25 @@ class Trainer(object):
                 index, ret = add_data_to_cuda(ret, config, True)
 
                 # ------------------------  Show Training Images(Visdom)  --------------------------#
-                if (iteration % self.config.print_loss_interval) == int(self.config.print_loss_remainder/10) or iteration == 0:
+                if ((iteration % self.config.print_loss_interval) == int(self.config.print_loss_remainder/10) or iteration == 0) and self.config.use_visdom:
                     visual_process(self.config, ret, model="train")
 
                 # ----------------------------  Forward and Backward    ----------------------------#
                 self.optimizer.zero_grad()
                 outputs = self.net(ret["imgs"])                # Forward
                 loss = self.loss_func(outputs, ret["labels"])  # Loss
-                loss.backward()                               # Backpropagation
-                self.optimizer.step()                         # Update Net Parameter
+                loss.backward()                                # Backpropagation
+                self.optimizer.step()                          # Update Net Parameter
 
                 if (iteration % self.config.print_loss_interval) == self.config.print_loss_remainder or iteration == 0:
                     one_iteration_time = time.time() - iteration_start_time
                     train_info = '[Epoch: %d,Iteration: %d] loss:%.06f  lr= %f  time=%.02f s' % (
-                        epoch, iteration + 1, loss.item() * 10, self.optimizer.param_groups[0]['lr'], one_iteration_time)
+                        epoch, iteration + 1, loss.item(), self.optimizer.param_groups[0]['lr'], one_iteration_time)
                     self.config.logger.info(train_info)
 
             one_epoch_time = "One epoch spend {} minutes!!!!".format(
                 (time.time() - epoch_start_time) / 60)
-            self.config.logger.debug(one_epoch_time)
+            self.config.logger.info(one_epoch_time)
             # -------------------------------  Evaluate  ----------------------------------#
             self.net = self.evaluator.eval_val(self.net, epoch)
             if self.config.best_acc >= config.model_ready_acc and epoch >= config.model_ready_epoch:
@@ -156,6 +158,7 @@ class Trainer(object):
                 break
         # ------------------------------  Save Model  ---------------------------------#
         save_model(config)
+
 
 if __name__ == "__main__":
     # efficientnet-b0

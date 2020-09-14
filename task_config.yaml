@@ -1,5 +1,10 @@
 dataset_root_path: /data/yyh/classify/data/cat_dog
-train_epochs: 20
+# dataset_root_path: /data/yyh/2020/cifar10
+train_epochs: 10
 train_size: 224
 model_ready_acc: 0.99
-model_ready_epoch: 5
+model_ready_epoch: 9
+gpu_num: 4, 5, 6, 7
+# gpu_num: 1, 2, 3
+efficientnet_pre_train_path: ./pretrain_models/efficientnet-b0-355c32eb.pth
+resnet_pre_train_path: ./pretrain_models/resnet50-19c8e357.pth

@@ -17,7 +17,7 @@ from torch.utils import model_zoo
 
 
 ################################################################################
-### Help functions for model architecture
+# Help functions for model architecture
 ################################################################################
 
 # GlobalParams and BlockArgs: Two namedtuples
@@ -72,6 +72,7 @@ class SwishImplementation(torch.autograd.Function):
         sigmoid_i = torch.sigmoid(i)
         return grad_output * (sigmoid_i * (1 + i * (1 - sigmoid_i)))
 
+
 class MemoryEfficientSwish(nn.Module):
     def forward(self, x):
         return SwishImplementation.apply(x)
@@ -97,10 +98,11 @@ def round_filters(filters, global_params):
     divisor = global_params.depth_divisor
     min_depth = global_params.min_depth
     filters *= multiplier
-    min_depth = min_depth or divisor # pay attention to this line when using min_depth
+    min_depth = min_depth or divisor  # pay attention to this line when using min_depth
     # follow the formula transferred from official TensorFlow implementation
-    new_filters = max(min_depth, int(filters + divisor / 2) // divisor * divisor)
-    if new_filters < 0.9 * filters: # prevent rounding by more than 10%
+    new_filters = max(min_depth, int(
+        filters + divisor / 2) // divisor * divisor)
+    if new_filters < 0.9 * filters:  # prevent rounding by more than 10%
         new_filters += divisor
     return int(new_filters)
 
@@ -125,7 +127,7 @@ def round_repeats(repeats, global_params):
 
 def drop_connect(inputs, p, training):
     """Drop connect.
-       
+
     Args:
         input (tensor: BCWH): Input of this structure.
         p (float: 0.0~1.0): Probability of drop connection.
@@ -144,7 +146,8 @@ def drop_connect(inputs, p, training):
 
     # generate binary_tensor mask according to probability (p for 0, 1-p for 1)
     random_tensor = keep_prob
-    random_tensor += torch.rand([batch_size, 1, 1, 1], dtype=inputs.dtype, device=inputs.device)
+    random_tensor += torch.rand([batch_size, 1, 1, 1],
+                                dtype=inputs.dtype, device=inputs.device)
     binary_tensor = torch.floor(random_tensor)
 
     output = inputs / keep_prob * binary_tensor
@@ -181,14 +184,15 @@ def calculate_output_image_size(input_image_size, stride):
     """
     if input_image_size is None:
         return None
-    image_height, image_width = get_width_and_height_from_size(input_image_size)
+    image_height, image_width = get_width_and_height_from_size(
+        input_image_size)
     stride = stride if isinstance(stride, int) else stride[0]
     image_height = int(math.ceil(image_height / stride))
     image_width = int(math.ceil(image_width / stride))
     return [image_height, image_width]
 
 
-# Note: 
+# Note:
 # The following 'SamePadding' functions make output size equal ceil(input size/stride).
 # Only when stride equals 1, can the output size be the same as input size.
 # Don't be confused by their function names ! ! !
@@ -227,18 +231,24 @@ class Conv2dDynamicSamePadding(nn.Conv2d):
     # => p = (i-1)*s+((k-1)*d+1)-i
 
     def __init__(self, in_channels, out_channels, kernel_size, stride=1, dilation=1, groups=1, bias=True):
-        super().__init__(in_channels, out_channels, kernel_size, stride, 0, dilation, groups, bias)
-        self.stride = self.stride if len(self.stride) == 2 else [self.stride[0]] * 2
+        super().__init__(in_channels, out_channels,
+                         kernel_size, stride, 0, dilation, groups, bias)
+        self.stride = self.stride if len(self.stride) == 2 else [
+            self.stride[0]] * 2
 
     def forward(self, x):
         ih, iw = x.size()[-2:]
         kh, kw = self.weight.size()[-2:]
         sh, sw = self.stride
-        oh, ow = math.ceil(ih / sh), math.ceil(iw / sw) # change the output size according to stride ! ! !
-        pad_h = max((oh - 1) * self.stride[0] + (kh - 1) * self.dilation[0] + 1 - ih, 0)
-        pad_w = max((ow - 1) * self.stride[1] + (kw - 1) * self.dilation[1] + 1 - iw, 0)
+        # change the output size according to stride ! ! !
+        oh, ow = math.ceil(ih / sh), math.ceil(iw / sw)
+        pad_h = max((oh - 1) * self.stride[0] +
+                    (kh - 1) * self.dilation[0] + 1 - ih, 0)
+        pad_w = max((ow - 1) * self.stride[1] +
+                    (kw - 1) * self.dilation[1] + 1 - iw, 0)
         if pad_h > 0 or pad_w > 0:
-            x = F.pad(x, [pad_w // 2, pad_w - pad_w // 2, pad_h // 2, pad_h - pad_h // 2])
+            x = F.pad(x, [pad_w // 2, pad_w - pad_w //
+                          2, pad_h // 2, pad_h - pad_h // 2])
         return F.conv2d(x, self.weight, self.bias, self.stride, self.padding, self.dilation, self.groups)
 
 
@@ -251,24 +261,30 @@ class Conv2dStaticSamePadding(nn.Conv2d):
 
     def __init__(self, in_channels, out_channels, kernel_size, stride=1, image_size=None, **kwargs):
         super().__init__(in_channels, out_channels, kernel_size, stride, **kwargs)
-        self.stride = self.stride if len(self.stride) == 2 else [self.stride[0]] * 2
+        self.stride = self.stride if len(self.stride) == 2 else [
+            self.stride[0]] * 2
 
         # Calculate padding based on image size and save it
         assert image_size is not None
-        ih, iw = (image_size, image_size) if isinstance(image_size, int) else image_size
+        ih, iw = (image_size, image_size) if isinstance(
+            image_size, int) else image_size
         kh, kw = self.weight.size()[-2:]
         sh, sw = self.stride
         oh, ow = math.ceil(ih / sh), math.ceil(iw / sw)
-        pad_h = max((oh - 1) * self.stride[0] + (kh - 1) * self.dilation[0] + 1 - ih, 0)
-        pad_w = max((ow - 1) * self.stride[1] + (kw - 1) * self.dilation[1] + 1 - iw, 0)
+        pad_h = max((oh - 1) * self.stride[0] +
+                    (kh - 1) * self.dilation[0] + 1 - ih, 0)
+        pad_w = max((ow - 1) * self.stride[1] +
+                    (kw - 1) * self.dilation[1] + 1 - iw, 0)
         if pad_h > 0 or pad_w > 0:
-            self.static_padding = nn.ZeroPad2d((pad_w // 2, pad_w - pad_w // 2, pad_h // 2, pad_h - pad_h // 2))
+            self.static_padding = nn.ZeroPad2d(
+                (pad_w // 2, pad_w - pad_w // 2, pad_h // 2, pad_h - pad_h // 2))
         else:
             self.static_padding = Identity()
 
     def forward(self, x):
         x = self.static_padding(x)
-        x = F.conv2d(x, self.weight, self.bias, self.stride, self.padding, self.dilation, self.groups)
+        x = F.conv2d(x, self.weight, self.bias, self.stride,
+                     self.padding, self.dilation, self.groups)
         return x
 
 
@@ -295,21 +311,28 @@ class MaxPool2dDynamicSamePadding(nn.MaxPool2d):
 
     def __init__(self, kernel_size, stride, padding=0, dilation=1, return_indices=False, ceil_mode=False):
         super().__init__(kernel_size, stride, padding, dilation, return_indices, ceil_mode)
-        self.stride = [self.stride] * 2 if isinstance(self.stride, int) else self.stride
-        self.kernel_size = [self.kernel_size] * 2 if isinstance(self.kernel_size, int) else self.kernel_size
-        self.dilation = [self.dilation] * 2 if isinstance(self.dilation, int) else self.dilation
+        self.stride = [self.stride] * \
+            2 if isinstance(self.stride, int) else self.stride
+        self.kernel_size = [self.kernel_size] * \
+            2 if isinstance(self.kernel_size, int) else self.kernel_size
+        self.dilation = [self.dilation] * \
+            2 if isinstance(self.dilation, int) else self.dilation
 
     def forward(self, x):
         ih, iw = x.size()[-2:]
         kh, kw = self.kernel_size
         sh, sw = self.stride
         oh, ow = math.ceil(ih / sh), math.ceil(iw / sw)
-        pad_h = max((oh - 1) * self.stride[0] + (kh - 1) * self.dilation[0] + 1 - ih, 0)
-        pad_w = max((ow - 1) * self.stride[1] + (kw - 1) * self.dilation[1] + 1 - iw, 0)
+        pad_h = max((oh - 1) * self.stride[0] +
+                    (kh - 1) * self.dilation[0] + 1 - ih, 0)
+        pad_w = max((ow - 1) * self.stride[1] +
+                    (kw - 1) * self.dilation[1] + 1 - iw, 0)
         if pad_h > 0 or pad_w > 0:
-            x = F.pad(x, [pad_w // 2, pad_w - pad_w // 2, pad_h // 2, pad_h - pad_h // 2])
+            x = F.pad(x, [pad_w // 2, pad_w - pad_w //
+                          2, pad_h // 2, pad_h - pad_h // 2])
         return F.max_pool2d(x, self.kernel_size, self.stride, self.padding,
                             self.dilation, self.ceil_mode, self.return_indices)
+
 
 class MaxPool2dStaticSamePadding(nn.MaxPool2d):
     """2D MaxPooling like TensorFlow's 'SAME' mode, with the given input image size.
@@ -318,20 +341,27 @@ class MaxPool2dStaticSamePadding(nn.MaxPool2d):
 
     def __init__(self, kernel_size, stride, image_size=None, **kwargs):
         super().__init__(kernel_size, stride, **kwargs)
-        self.stride = [self.stride] * 2 if isinstance(self.stride, int) else self.stride
-        self.kernel_size = [self.kernel_size] * 2 if isinstance(self.kernel_size, int) else self.kernel_size
-        self.dilation = [self.dilation] * 2 if isinstance(self.dilation, int) else self.dilation
+        self.stride = [self.stride] * \
+            2 if isinstance(self.stride, int) else self.stride
+        self.kernel_size = [self.kernel_size] * \
+            2 if isinstance(self.kernel_size, int) else self.kernel_size
+        self.dilation = [self.dilation] * \
+            2 if isinstance(self.dilation, int) else self.dilation
 
         # Calculate padding based on image size and save it
         assert image_size is not None
-        ih, iw = (image_size, image_size) if isinstance(image_size, int) else image_size
+        ih, iw = (image_size, image_size) if isinstance(
+            image_size, int) else image_size
         kh, kw = self.kernel_size
         sh, sw = self.stride
         oh, ow = math.ceil(ih / sh), math.ceil(iw / sw)
-        pad_h = max((oh - 1) * self.stride[0] + (kh - 1) * self.dilation[0] + 1 - ih, 0)
-        pad_w = max((ow - 1) * self.stride[1] + (kw - 1) * self.dilation[1] + 1 - iw, 0)
+        pad_h = max((oh - 1) * self.stride[0] +
+                    (kh - 1) * self.dilation[0] + 1 - ih, 0)
+        pad_w = max((ow - 1) * self.stride[1] +
+                    (kw - 1) * self.dilation[1] + 1 - iw, 0)
         if pad_h > 0 or pad_w > 0:
-            self.static_padding = nn.ZeroPad2d((pad_w // 2, pad_w - pad_w // 2, pad_h // 2, pad_h - pad_h // 2))
+            self.static_padding = nn.ZeroPad2d(
+                (pad_w // 2, pad_w - pad_w // 2, pad_h // 2, pad_h - pad_h // 2))
         else:
             self.static_padding = Identity()
 
@@ -340,6 +370,7 @@ class MaxPool2dStaticSamePadding(nn.MaxPool2d):
         x = F.max_pool2d(x, self.kernel_size, self.stride, self.padding,
                          self.dilation, self.ceil_mode, self.return_indices)
         return x
+
 
 class Identity(nn.Module):
     """Identity mapping.
@@ -354,7 +385,7 @@ class Identity(nn.Module):
 
 
 ################################################################################
-### Helper functions for loading model params
+# Helper functions for loading model params
 ################################################################################
 
 # BlockDecoder: A Class for encoding and decoding BlockArgs
@@ -549,7 +580,8 @@ def get_model_params(model_name, override_params):
         blocks_args, global_params = efficientnet(
             width_coefficient=w, depth_coefficient=d, dropout_rate=p, image_size=s)
     else:
-        raise NotImplementedError('model name is not pre-defined: %s' % model_name)
+        raise NotImplementedError(
+            'model name is not pre-defined: %s' % model_name)
     if override_params:
         # ValueError will be raised here if override_params has fields not included in global_params.
         global_params = global_params._replace(**override_params)
@@ -585,6 +617,10 @@ url_map_advprop = {
 
 # TODO: add the petrained weights url map of 'efficientnet-l2'
 
+pretrain_model_name = ["efficientnet-b0-355c32eb.pth", "efficientnet-b1-0f3ce85a.pth", "efficientnet-b2-6e9d97e5.pth",
+                       "efficientnet-b3-cdd7c0f4.pth", "efficientnet-b4-44fb3a87.pth", "efficientnet-b5-86493f6b.pth",
+                       "efficientnet-b6-ac80338e.pth", "efficientnet-b7-4652b6dd.pth", "efficientnet-b8-22a8fe65.pth"]
+
 
 def load_pretrained_weights(model, model_name, weights_path=None, load_fc=True, advprop=False):
     """Loads pretrained weights from weights path or download using url.
@@ -599,13 +635,13 @@ def load_pretrained_weights(model, model_name, weights_path=None, load_fc=True, 
         advprop (bool): Whether to load pretrained weights
                         trained with advprop (valid when weights_path is None).
     """
-    if isinstance(weights_path,str):
+    if isinstance(weights_path, str):
         state_dict = torch.load(weights_path)
     else:
         # AutoAugment or Advprop (different preprocessing)
         url_map_ = url_map_advprop if advprop else url_map
         state_dict = model_zoo.load_url(url_map_[model_name])
-    
+
     if load_fc:
         ret = model.load_state_dict(state_dict, strict=False)
         assert not ret.missing_keys, f'Missing keys when loading pretrained weights: {ret.missing_keys}'

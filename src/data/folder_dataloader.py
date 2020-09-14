@@ -130,6 +130,3 @@ class DataSet(data.Dataset):
         log_dict(self.class_num_before_balance, format_, self.config.logger)
         # log after balance
         # format_ = "Num of whole Training Set After Balancing: {}".format(len(path_and_label_list))
-
-        
-
