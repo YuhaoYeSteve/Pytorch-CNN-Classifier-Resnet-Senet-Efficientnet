@@ -18,5 +18,7 @@
 
 # 文件夹
 /train_out/
+/train_out/cat_dog
+/train_out/cifar10
 /dataset/
 /__pycache__/
