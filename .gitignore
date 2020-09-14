@@ -17,7 +17,7 @@
 *.idea
 
 # 文件夹
-# /train_out/
+/train_out_/
 # /train_out/cat_dog
 # /train_out/cifar10
 /dataset/
