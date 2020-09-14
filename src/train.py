@@ -71,8 +71,14 @@ class Trainer(object):
         # -------------------------------   Init Network  ----------------------------------#
         if "efficientnet" in config.model_name:
             if config.use_multi_gpu:
-                self.net = EfficientNet.from_pretrained(config.model_name, num_classes=config.class_num, weights_path=self.config.efficientnet_pre_train_path).cuda(
-                    config.gpu_num[0])
+                if config.task_config["task_pretrain"]:
+                    self.net = torch.load(config.efficientnet_task_pre_train_path, map_location='cpu')
+                    if isinstance(self.net, torch.nn.DataParallel):
+                        self.net = self.net.module
+                    self.net = self.net.cuda(config.gpu_num[0])
+                else:
+                    self.net = EfficientNet.from_pretrained(config.model_name, num_classes=config.class_num, weights_path=self.config.efficientnet_pre_train_path).cuda(
+                        config.gpu_num[0])
                 self.net.train()
             else:
                 self.net = EfficientNet.from_pretrained(
@@ -80,11 +86,17 @@ class Trainer(object):
                 self.net.train()
         elif "resnet50" in config.model_name:
             if config.use_multi_gpu:
-                self.net = resnet50(pretrained=True, cached_file=config.resnet_pre_train_path)
-                num_ftrs = self.net.fc.in_features
-                self.net.fc = nn.Linear(num_ftrs, config.class_num) 
-                self.net = self.net.cuda(config.gpu_num[0])
-                self.net.train()
+                if config.task_config["task_pretrain"]:
+                    self.net = torch.load(config.resnet_pre_train_path, map_location='cpu')
+                    if isinstance(self.net, torch.nn.DataParallel):
+                        self.net = self.net.module
+                    self.net = self.net.cuda(config.gpu_num[0])
+                else:
+                    self.net = resnet50(pretrained=True, cached_file=config.resnet_pre_train_path)
+                    num_ftrs = self.net.fc.in_features
+                    self.net.fc = nn.Linear(num_ftrs, config.class_num) 
+                    self.net = self.net.cuda(config.gpu_num[0])
+                    self.net.train()
             else:
                 self.net = resnet50(pretrained=True, cached_file=config.resnet_pre_train_path)
                 num_ftrs = self.net.fc.in_features
@@ -124,31 +136,31 @@ class Trainer(object):
                 use_lr = config.lr_schedule[epoch]
                 set_lr(self.optimizer, use_lr)
 
-            # ----------------------------  One Epoch Training    ----------------------------#
-            for iteration, ret in enumerate(self.train_loader):
-                iteration_start_time = time.time()
-                index, ret = add_data_to_cuda(ret, config, True)
+            # # ----------------------------  One Epoch Training    ----------------------------#
+            # for iteration, ret in enumerate(self.train_loader):
+            #     iteration_start_time = time.time()
+            #     index, ret = add_data_to_cuda(ret, config, True)
 
-                # ------------------------  Show Training Images(Visdom)  --------------------------#
-                if ((iteration % self.config.print_loss_interval) == int(self.config.print_loss_remainder/10) or iteration == 0) and self.config.use_visdom:
-                    visual_process(self.config, ret, model="train")
+            #     # ------------------------  Show Training Images(Visdom)  --------------------------#
+            #     if ((iteration % self.config.print_loss_interval) == int(self.config.print_loss_remainder/10) or iteration == 0) and self.config.use_visdom:
+            #         visual_process(self.config, ret, model="train")
 
-                # ----------------------------  Forward and Backward    ----------------------------#
-                self.optimizer.zero_grad()
-                outputs = self.net(ret["imgs"])                # Forward
-                loss = self.loss_func(outputs, ret["labels"])  # Loss
-                loss.backward()                                # Backpropagation
-                self.optimizer.step()                          # Update Net Parameter
+            #     # ----------------------------  Forward and Backward    ----------------------------#
+            #     self.optimizer.zero_grad()
+            #     outputs = self.net(ret["imgs"])                # Forward
+            #     loss = self.loss_func(outputs, ret["labels"])  # Loss
+            #     loss.backward()                                # Backpropagation
+            #     self.optimizer.step()                          # Update Net Parameter
 
-                if (iteration % self.config.print_loss_interval) == self.config.print_loss_remainder or iteration == 0:
-                    one_iteration_time = time.time() - iteration_start_time
-                    train_info = '[Epoch: %d,Iteration: %d] loss:%.06f  lr= %f  time=%.02f s' % (
-                        epoch, iteration + 1, loss.item(), self.optimizer.param_groups[0]['lr'], one_iteration_time)
-                    self.config.logger.info(train_info)
+            #     if (iteration % self.config.print_loss_interval) == self.config.print_loss_remainder or iteration == 0:
+            #         one_iteration_time = time.time() - iteration_start_time
+            #         train_info = '[Epoch: %d,Iteration: %d] loss:%.06f  lr= %f  time=%.02f s' % (
+            #             epoch, iteration + 1, loss.item(), self.optimizer.param_groups[0]['lr'], one_iteration_time)
+            #         self.config.logger.info(train_info)
 
-            one_epoch_time = "One epoch spend {} minutes!!!!".format(
-                (time.time() - epoch_start_time) / 60)
-            self.config.logger.info(one_epoch_time)
+            # one_epoch_time = "One epoch spend {} minutes!!!!".format(
+            #     (time.time() - epoch_start_time) / 60)
+            # self.config.logger.info(one_epoch_time)
             # -------------------------------  Evaluate  ----------------------------------#
             self.net = self.evaluator.eval_val(self.net, epoch)
             if self.config.best_acc >= config.model_ready_acc and epoch >= config.model_ready_epoch:
@@ -161,10 +173,10 @@ class Trainer(object):
 
 
 if __name__ == "__main__":
-    # efficientnet-b0
-    config = TaskConfig("efficientnet-b0")
-    tainer = Trainer(config)
-    tainer.train()
+    # # efficientnet-b0
+    # config = TaskConfig("efficientnet-b0")
+    # tainer = Trainer(config)
+    # tainer.train()
     # resnet50
     config = TaskConfig("resnet50")
     tainer = Trainer(config)

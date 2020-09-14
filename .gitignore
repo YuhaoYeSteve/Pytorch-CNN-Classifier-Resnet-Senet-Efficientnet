@@ -18,4 +18,5 @@
 
 # 文件夹
 /train_out/
+/dataset/
 /__pycache__/

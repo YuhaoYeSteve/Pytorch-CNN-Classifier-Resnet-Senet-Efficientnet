@@ -182,7 +182,7 @@ def save_model(config):
     config.best_model.eval()
     torch.save(config.best_model, torch_model_save_path)
     torch.save(config.best_model.state_dict(), torch_state_dict_save_path)
-    efficientnet_to_onnx(config.best_model, config, onnx_model_save_path)
+    # efficientnet_to_onnx(config.best_model, config, onnx_model_save_path)
 
 
 # def load_model(model, state_dict):

@@ -91,6 +91,11 @@ class TaskConfig(Config):
         self.resnet_pre_train_path = self.task_config["resnet_pre_train_path"]
         self.gpu_num = [int(_) for _ in self.task_config["gpu_num"].split(",")] 
         # --------------------------------   Path   ----------------------------------#
+        self.efficientnet_pre_train_path = self.task_config["efficientnet_pre_train_path"]
+        self.resnet_pre_train_path = self.task_config["resnet_pre_train_path"]
+        if self.task_config["task_pretrain"]:
+            self.efficientnet_task_pre_train_path = self.task_config["efficientnet_task_pre_train_path"]
+            self.resnet_task_pre_train_path = self.task_config["resnet_task_pre_train_path"]
         self.input_size = self.task_config["train_size"]
         self.train_data_root = os.path.join(
             self.task_config["dataset_root_path"], "train")
@@ -118,31 +123,31 @@ class TaskConfig(Config):
         # -----------------------------   Augmentation   -----------------------------#
         self.train_transform = A.Compose([
             # A.RandomRotate90(),
-            # A.Flip(p=0.5),
+            A.Flip(p=0.5),
             A.HorizontalFlip(p=1),
-            A.Transpose(p=1),
-            A.OneOf([
-                A.IAAAdditiveGaussianNoise(),
-                A.GaussNoise(),
-            ], p=1),
-            A.OneOf([
-                A.MotionBlur(),
-                A.MedianBlur(blur_limit=3),
-                A.Blur(blur_limit=3),
-            ], p=1),
-            A.ShiftScaleRotate(shift_limit=0.0625,
-                               scale_limit=0.2, rotate_limit=45, p=1),
-            A.OneOf([
-                A.OpticalDistortion(),
-                A.GridDistortion(),
-                A.IAAPiecewiseAffine(),
-            ], p=1),
-            A.OneOf([
-                A.CLAHE(clip_limit=2),
-                A.IAASharpen(),
-                A.IAAEmboss(),
-                A.RandomBrightnessContrast(),
-            ], p=1),
+            # A.Transpose(p=1),
+            # A.OneOf([
+            #     A.IAAAdditiveGaussianNoise(),
+            #     A.GaussNoise(),
+            # ], p=1),
+            # A.OneOf([
+            #     A.MotionBlur(),
+            #     A.MedianBlur(blur_limit=3),
+            #     A.Blur(blur_limit=3),
+            # ], p=1),
+            # A.ShiftScaleRotate(shift_limit=0.0625,
+            #                    scale_limit=0.2, rotate_limit=45, p=1),
+            # A.OneOf([
+            #     A.OpticalDistortion(),
+            #     A.GridDistortion(),
+            #     A.IAAPiecewiseAffine(),
+            # ], p=1),
+            # A.OneOf([
+            #     A.CLAHE(clip_limit=2),
+            #     A.IAASharpen(),
+            #     A.IAAEmboss(),
+            #     A.RandomBrightnessContrast(),
+            # ], p=1),
             A.HueSaturationValue(p=1),
             A.Resize(height=self.input_size, width=self.input_size, p=1)
         ])
