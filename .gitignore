@@ -10,7 +10,7 @@
 
 # 图片
 *.jpg
-*.png
+# *.png
 
 # IDE工程文件
 *.vscode
