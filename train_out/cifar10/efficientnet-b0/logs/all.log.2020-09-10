@@ -1,0 +1,753 @@
+2020-09-10 09:39:38,422 - INFO - train.py[:54] - Set Random Sed: 3
+2020-09-10 09:39:41,625 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 09:39:41,626 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 09:39:41,626 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 09:39:41,626 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 09:39:41,626 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 09:39:41,626 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 09:39:41,627 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 09:39:41,627 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 09:39:41,627 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 09:39:41,627 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 09:39:41,627 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 09:39:42,630 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 09:39:42,631 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 09:39:42,631 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 09:39:42,631 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 09:39:42,631 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 09:39:42,632 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 09:39:42,632 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 09:39:42,632 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 09:39:42,632 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 09:39:42,632 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 09:39:42,633 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 09:40:37,524 - INFO - train.py[:54] - Set Random Sed: 3
+2020-09-10 09:40:38,068 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 09:40:38,068 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 09:40:38,068 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 09:40:38,069 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 09:40:38,069 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 09:40:38,069 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 09:40:38,069 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 09:40:38,069 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 09:40:38,069 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 09:40:38,069 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 09:40:38,070 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 09:40:38,161 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 09:40:38,161 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 09:40:38,161 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 09:40:38,162 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 09:40:38,162 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 09:40:38,162 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 09:40:38,162 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 09:40:38,162 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 09:40:38,162 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 09:40:38,162 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 09:40:38,163 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 09:45:21,088 - INFO - train.py[:54] - Set Random Sed: 3
+2020-09-10 09:45:21,715 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 09:45:21,716 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 09:45:21,716 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 09:45:21,716 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 09:45:21,716 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 09:45:21,716 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 09:45:21,716 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 09:45:21,716 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 09:45:21,717 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 09:45:21,717 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 09:45:21,717 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 09:45:21,810 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 09:45:21,810 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 09:45:21,810 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 09:45:21,810 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 09:45:21,811 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 09:45:21,811 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 09:45:21,811 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 09:45:21,811 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 09:45:21,811 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 09:45:21,811 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 09:45:21,811 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 10:08:41,861 - INFO - train.py[:54] - Set Random Sed: 3
+2020-09-10 10:08:42,583 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 10:08:42,583 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 10:08:42,583 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 10:08:42,583 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 10:08:42,584 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 10:08:42,584 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 10:08:42,584 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 10:08:42,584 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 10:08:42,584 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 10:08:42,585 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 10:08:42,585 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 10:08:42,682 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 10:08:42,682 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 10:08:42,682 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 10:08:42,682 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 10:08:42,682 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 10:08:42,683 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 10:08:42,683 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 10:08:42,683 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 10:08:42,683 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 10:08:42,683 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 10:08:42,683 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 10:09:29,726 - INFO - train.py[:54] - Set Random Sed: 3
+2020-09-10 10:09:29,993 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 10:09:29,993 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 10:09:29,993 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 10:09:29,993 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 10:09:29,993 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 10:09:29,993 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 10:09:29,993 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 10:09:29,993 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 10:09:29,993 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 10:09:29,993 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 10:09:29,993 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 10:09:30,033 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 10:09:30,033 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 10:09:30,033 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 10:09:30,033 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 10:09:30,033 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 10:09:30,034 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 10:09:30,034 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 10:09:30,034 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 10:09:30,034 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 10:09:30,034 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 10:09:30,034 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 10:09:58,526 - INFO - train.py[:146] - [Epoch: 1,Iteration: 1] loss:2.309620  lr= 0.001000  time=13.41 s
+2020-09-10 10:10:28,411 - INFO - train.py[:146] - [Epoch: 1,Iteration: 100] loss:0.240280  lr= 0.001000  time=0.29 s
+2020-09-10 10:10:57,963 - INFO - train.py[:150] - One epoch spend 1.3302140315373738 minutes!!!!
+2020-09-10 10:11:07,505 - INFO - train.py[:37] - One Epoch val acc: 0.8775
+2020-09-10 10:11:07,508 - INFO - train.py[:156] - Val Acc0.8775 >= 0.5, Early Stop !!!! Best Epoch is 1
+2020-09-10 10:11:10,240 - INFO - general_utils.py[:218] - Save onnx model to ./train_out/cifar10/efficientnet-b0/1_0.8775.onnx
+2020-09-10 10:11:10,406 - INFO - train.py[:54] - Set Random Sed: 3
+2020-09-10 10:11:10,775 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 10:11:10,775 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 10:11:10,775 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 10:11:10,775 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 10:11:10,776 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 10:11:10,776 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 10:11:10,776 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 10:11:10,776 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 10:11:10,776 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 10:11:10,776 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 10:11:10,776 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 10:11:10,824 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 10:11:10,824 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 10:11:10,824 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 10:11:10,824 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 10:11:10,825 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 10:11:10,825 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 10:11:10,825 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 10:11:10,825 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 10:11:10,825 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 10:11:10,825 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 10:11:10,825 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 10:11:16,110 - INFO - train.py[:146] - [Epoch: 1,Iteration: 1] loss:2.346208  lr= 0.001000  time=0.69 s
+2020-09-10 10:11:55,970 - INFO - train.py[:146] - [Epoch: 1,Iteration: 100] loss:0.499356  lr= 0.001000  time=0.39 s
+2020-09-10 10:12:34,434 - INFO - train.py[:150] - One epoch spend 1.381617216269175 minutes!!!!
+2020-09-10 10:12:46,150 - INFO - train.py[:37] - One Epoch val acc: 0.8145
+2020-09-10 10:12:46,154 - INFO - train.py[:156] - Val Acc0.8145 >= 0.5, Early Stop !!!! Best Epoch is 1
+2020-09-10 10:12:48,367 - INFO - general_utils.py[:218] - Save onnx model to ./train_out/cifar10/resnet50/1_0.8145.onnx
+2020-09-10 10:39:23,789 - INFO - train.py[:54] - Set Random Sed: 3
+2020-09-10 10:39:24,083 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 10:39:24,084 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 10:39:24,084 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 10:39:24,084 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 10:39:24,084 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 10:39:24,084 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 10:39:24,084 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 10:39:24,084 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 10:39:24,084 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 10:39:24,084 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 10:39:24,084 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 10:39:24,128 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 10:39:24,128 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 10:39:24,128 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 10:39:24,128 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 10:39:24,128 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 10:39:24,128 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 10:39:24,128 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 10:39:24,128 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 10:39:24,128 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 10:39:24,128 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 10:39:24,128 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 13:20:38,527 - INFO - train.py[:55] - Set Random Sed: 3
+2020-09-10 13:20:38,811 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 13:20:38,811 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 13:20:38,811 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 13:20:38,811 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 13:20:38,811 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 13:20:38,811 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 13:20:38,812 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 13:20:38,812 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 13:20:38,812 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 13:20:38,812 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 13:20:38,812 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 13:20:38,862 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 13:20:38,862 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 13:20:38,863 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 13:20:38,863 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 13:20:38,863 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 13:20:38,863 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 13:20:38,863 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 13:20:38,863 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 13:20:38,863 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 13:20:38,863 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 13:20:38,863 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 13:21:11,497 - INFO - train.py[:55] - Set Random Sed: 3
+2020-09-10 13:21:12,179 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 13:21:12,179 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 13:21:12,180 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 13:21:12,180 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 13:21:12,180 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 13:21:12,180 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 13:21:12,180 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 13:21:12,180 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 13:21:12,181 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 13:21:12,181 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 13:21:12,181 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 13:21:12,298 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 13:21:12,299 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 13:21:12,299 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 13:21:12,299 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 13:21:12,299 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 13:21:12,299 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 13:21:12,299 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 13:21:12,300 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 13:21:12,300 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 13:21:12,300 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 13:21:12,300 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 13:21:29,482 - INFO - train.py[:55] - Set Random Sed: 3
+2020-09-10 13:21:29,777 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 13:21:29,778 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 13:21:29,778 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 13:21:29,778 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 13:21:29,778 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 13:21:29,778 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 13:21:29,778 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 13:21:29,778 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 13:21:29,778 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 13:21:29,778 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 13:21:29,778 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 13:21:29,829 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 13:21:29,830 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 13:21:29,830 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 13:21:29,830 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 13:21:29,830 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 13:21:29,830 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 13:21:29,830 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 13:21:29,830 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 13:21:29,830 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 13:21:29,830 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 13:21:29,830 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 13:22:04,436 - INFO - train.py[:147] - [Epoch: 1,Iteration: 1] loss:2.309620  lr= 0.001000  time=25.65 s
+2020-09-10 13:22:49,009 - INFO - train.py[:147] - [Epoch: 1,Iteration: 100] loss:0.240278  lr= 0.001000  time=0.38 s
+2020-09-10 13:23:30,228 - INFO - train.py[:151] - One epoch spend 1.925542457898458 minutes!!!!
+2020-09-10 13:23:45,867 - INFO - train.py[:38] - One Epoch val acc: 0.8774
+2020-09-10 13:23:45,873 - INFO - train.py[:157] - Val Acc0.8774 >= 0.5, Early Stop !!!! Best Epoch is 1
+2020-09-10 13:23:49,292 - INFO - general_utils.py[:218] - Save onnx model to ./train_out/cifar10/efficientnet-b0/1_0.8774.onnx
+2020-09-10 13:23:49,415 - INFO - train.py[:55] - Set Random Sed: 3
+2020-09-10 13:23:50,481 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 13:23:50,482 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 13:23:50,482 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 13:23:50,483 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 13:23:50,483 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 13:23:50,483 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 13:23:50,483 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 13:23:50,483 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 13:23:50,483 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 13:23:50,483 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 13:23:50,483 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 13:23:50,539 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 13:23:50,540 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 13:23:50,540 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 13:23:50,540 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 13:23:50,540 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 13:23:50,540 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 13:23:50,541 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 13:23:50,541 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 13:23:50,541 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 13:23:50,541 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 13:23:50,541 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 13:24:01,710 - INFO - train.py[:147] - [Epoch: 1,Iteration: 1] loss:2.346208  lr= 0.001000  time=1.08 s
+2020-09-10 13:24:51,946 - INFO - train.py[:147] - [Epoch: 1,Iteration: 100] loss:0.572262  lr= 0.001000  time=0.47 s
+2020-09-10 13:25:39,597 - INFO - train.py[:151] - One epoch spend 1.802050805091858 minutes!!!!
+2020-09-10 13:25:59,017 - INFO - train.py[:38] - One Epoch val acc: 0.755
+2020-09-10 13:25:59,021 - INFO - train.py[:157] - Val Acc0.755 >= 0.5, Early Stop !!!! Best Epoch is 1
+2020-09-10 13:26:01,838 - INFO - general_utils.py[:218] - Save onnx model to ./train_out/cifar10/resnet50/1_0.755.onnx
+2020-09-10 13:26:38,006 - INFO - train.py[:55] - Set Random Sed: 3
+2020-09-10 13:26:38,446 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 13:26:38,446 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 13:26:38,446 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 13:26:38,446 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 13:26:38,446 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 13:26:38,446 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 13:26:38,446 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 13:26:38,446 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 13:26:38,446 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 13:26:38,447 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 13:26:38,447 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 13:26:38,508 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 13:26:38,508 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 13:26:38,508 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 13:26:38,508 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 13:26:38,508 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 13:26:38,508 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 13:26:38,508 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 13:26:38,508 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 13:26:38,508 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 13:26:38,508 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 13:26:38,508 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 13:28:12,229 - INFO - train.py[:55] - Set Random Sed: 3
+2020-09-10 13:28:12,533 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 13:28:12,533 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 13:28:12,533 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 13:28:12,533 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 13:28:12,533 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 13:28:12,533 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 13:28:12,533 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 13:28:12,534 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 13:28:12,534 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 13:28:12,534 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 13:28:12,534 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 13:28:12,589 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 13:28:12,589 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 13:28:12,589 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 13:28:12,589 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 13:28:12,589 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 13:28:12,589 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 13:28:12,590 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 13:28:12,590 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 13:28:12,590 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 13:28:12,590 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 13:28:12,590 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 13:28:37,483 - INFO - train.py[:147] - [Epoch: 1,Iteration: 1] loss:2.309620  lr= 0.001000  time=15.73 s
+2020-09-10 13:29:14,093 - INFO - train.py[:147] - [Epoch: 1,Iteration: 100] loss:0.240277  lr= 0.001000  time=0.32 s
+2020-09-10 13:29:47,511 - INFO - train.py[:151] - One epoch spend 1.4991004784901938 minutes!!!!
+2020-09-10 13:29:59,347 - INFO - train.py[:38] - One Epoch val acc: 0.8774
+2020-09-10 13:30:05,245 - INFO - train.py[:147] - [Epoch: 2,Iteration: 1] loss:0.142972  lr= 0.001000  time=1.13 s
+2020-09-10 13:30:39,316 - INFO - train.py[:147] - [Epoch: 2,Iteration: 100] loss:0.138201  lr= 0.001000  time=0.30 s
+2020-09-10 13:31:11,079 - INFO - train.py[:151] - One epoch spend 1.1954424381256104 minutes!!!!
+2020-09-10 13:31:22,738 - INFO - train.py[:38] - One Epoch val acc: 0.9429
+2020-09-10 13:31:27,902 - INFO - train.py[:147] - [Epoch: 3,Iteration: 1] loss:0.113895  lr= 0.001000  time=1.00 s
+2020-09-10 13:32:02,313 - INFO - train.py[:147] - [Epoch: 3,Iteration: 100] loss:0.062947  lr= 0.001000  time=0.34 s
+2020-09-10 13:32:34,002 - INFO - train.py[:151] - One epoch spend 1.1876340707143147 minutes!!!!
+2020-09-10 13:32:45,526 - INFO - train.py[:38] - One Epoch val acc: 0.9433
+2020-09-10 13:32:50,619 - INFO - train.py[:147] - [Epoch: 4,Iteration: 1] loss:0.070855  lr= 0.001000  time=1.11 s
+2020-09-10 13:33:24,947 - INFO - train.py[:147] - [Epoch: 4,Iteration: 100] loss:0.081168  lr= 0.001000  time=0.31 s
+2020-09-10 13:33:56,639 - INFO - train.py[:151] - One epoch spend 1.1851254224777221 minutes!!!!
+2020-09-10 13:34:08,019 - INFO - train.py[:38] - One Epoch val acc: 0.9382
+2020-09-10 13:34:13,351 - INFO - train.py[:147] - [Epoch: 5,Iteration: 1] loss:0.113619  lr= 0.000100  time=1.24 s
+2020-09-10 13:34:47,522 - INFO - train.py[:147] - [Epoch: 5,Iteration: 100] loss:0.023394  lr= 0.000100  time=0.34 s
+2020-09-10 13:35:18,874 - INFO - train.py[:151] - One epoch spend 1.1808056116104126 minutes!!!!
+2020-09-10 13:35:30,292 - INFO - train.py[:38] - One Epoch val acc: 0.9704
+2020-09-10 13:35:36,123 - INFO - train.py[:147] - [Epoch: 6,Iteration: 1] loss:0.020983  lr= 0.000100  time=1.28 s
+2020-09-10 13:45:10,000 - INFO - train.py[:55] - Set Random Sed: 3
+2020-09-10 13:45:10,724 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 13:45:10,725 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 13:45:10,725 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 13:45:10,725 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 13:45:10,725 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 13:45:10,725 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 13:45:10,725 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 13:45:10,725 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 13:45:10,726 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 13:45:10,726 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 13:45:10,726 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 13:45:10,833 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 13:45:10,834 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 13:45:10,834 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 13:45:10,834 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 13:45:10,834 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 13:45:10,834 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 13:45:10,835 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 13:45:10,835 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 13:45:10,835 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 13:45:10,835 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 13:45:10,835 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 13:47:45,763 - INFO - train.py[:55] - Set Random Sed: 3
+2020-09-10 13:47:46,396 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 13:47:46,396 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 13:47:46,397 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 13:47:46,397 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 13:47:46,397 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 13:47:46,397 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 13:47:46,397 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 13:47:46,397 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 13:47:46,397 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 13:47:46,398 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 13:47:46,398 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 13:47:46,517 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 13:47:46,518 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 13:47:46,518 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 13:47:46,518 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 13:47:46,519 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 13:47:46,519 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 13:47:46,519 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 13:47:46,520 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 13:47:46,520 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 13:47:46,520 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 13:47:46,520 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 13:48:11,545 - INFO - train.py[:55] - Set Random Sed: 3
+2020-09-10 13:48:12,206 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 13:48:12,207 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 13:48:12,207 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 13:48:12,208 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 13:48:12,208 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 13:48:12,209 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 13:48:12,209 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 13:48:12,209 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 13:48:12,210 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 13:48:12,210 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 13:48:12,210 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 13:48:12,344 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 13:48:12,344 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 13:48:12,344 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 13:48:12,345 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 13:48:12,345 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 13:48:12,345 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 13:48:12,346 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 13:48:12,346 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 13:48:12,346 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 13:48:12,346 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 13:48:12,347 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 13:48:43,767 - INFO - train.py[:55] - Set Random Sed: 3
+2020-09-10 13:48:44,395 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 13:48:44,396 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 13:48:44,396 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 13:48:44,397 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 13:48:44,397 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 13:48:44,397 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 13:48:44,398 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 13:48:44,398 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 13:48:44,398 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 13:48:44,399 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 13:48:44,399 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 13:48:44,511 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 13:48:44,511 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 13:48:44,512 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 13:48:44,512 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 13:48:44,512 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 13:48:44,513 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 13:48:44,513 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 13:48:44,513 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 13:48:44,513 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 13:48:44,514 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 13:48:44,514 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 13:49:40,763 - INFO - train.py[:55] - Set Random Sed: 3
+2020-09-10 13:49:41,552 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 13:49:41,552 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 13:49:41,552 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 13:49:41,553 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 13:49:41,553 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 13:49:41,553 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 13:49:41,553 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 13:49:41,553 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 13:49:41,553 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 13:49:41,553 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 13:49:41,554 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 13:49:41,664 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 13:49:41,664 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 13:49:41,664 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 13:49:41,665 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 13:49:41,665 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 13:49:41,665 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 13:49:41,665 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 13:49:41,665 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 13:49:41,665 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 13:49:41,665 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 13:49:41,666 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 13:56:07,894 - INFO - train.py[:55] - Set Random Sed: 3
+2020-09-10 13:56:08,488 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 13:56:08,489 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 13:56:08,489 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 13:56:08,489 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 13:56:08,489 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 13:56:08,489 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 13:56:08,489 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 13:56:08,490 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 13:56:08,490 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 13:56:08,490 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 13:56:08,490 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 13:56:08,596 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 13:56:08,596 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 13:56:08,596 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 13:56:08,596 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 13:56:08,596 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 13:56:08,597 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 13:56:08,597 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 13:56:08,597 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 13:56:08,597 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 13:56:08,597 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 13:56:08,597 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 13:57:34,781 - INFO - train.py[:55] - Set Random Sed: 3
+2020-09-10 13:57:35,053 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 13:57:35,054 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 13:57:35,054 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 13:57:35,054 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 13:57:35,054 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 13:57:35,054 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 13:57:35,054 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 13:57:35,054 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 13:57:35,054 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 13:57:35,054 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 13:57:35,054 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 13:57:35,105 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 13:57:35,105 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 13:57:35,105 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 13:57:35,105 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 13:57:35,105 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 13:57:35,106 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 13:57:35,106 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 13:57:35,106 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 13:57:35,106 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 13:57:35,106 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 13:57:35,106 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 13:58:10,572 - INFO - train.py[:55] - Set Random Sed: 3
+2020-09-10 13:58:10,847 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 13:58:10,848 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 13:58:10,848 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 13:58:10,848 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 13:58:10,848 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 13:58:10,848 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 13:58:10,848 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 13:58:10,848 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 13:58:10,848 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 13:58:10,848 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 13:58:10,848 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 13:58:10,902 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 13:58:10,902 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 13:58:10,902 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 13:58:10,902 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 13:58:10,902 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 13:58:10,902 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 13:58:10,902 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 13:58:10,902 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 13:58:10,902 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 13:58:10,902 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 13:58:10,902 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 13:59:32,501 - INFO - train.py[:55] - Set Random Sed: 3
+2020-09-10 13:59:32,769 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 13:59:32,769 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 13:59:32,770 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 13:59:32,770 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 13:59:32,770 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 13:59:32,770 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 13:59:32,770 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 13:59:32,770 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 13:59:32,770 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 13:59:32,770 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 13:59:32,770 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 13:59:32,822 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 13:59:32,822 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 13:59:32,822 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 13:59:32,822 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 13:59:32,822 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 13:59:32,822 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 13:59:32,822 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 13:59:32,822 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 13:59:32,822 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 13:59:32,822 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 13:59:32,822 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 14:00:07,693 - INFO - train.py[:55] - Set Random Sed: 3
+2020-09-10 14:00:08,304 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 14:00:08,304 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 14:00:08,304 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 14:00:08,305 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 14:00:08,305 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 14:00:08,305 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 14:00:08,305 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 14:00:08,305 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 14:00:08,305 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 14:00:08,305 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 14:00:08,306 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 14:00:08,413 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 14:00:08,413 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 14:00:08,413 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 14:00:08,413 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 14:00:08,414 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 14:00:08,414 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 14:00:08,414 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 14:00:08,414 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 14:00:08,414 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 14:00:08,414 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 14:00:08,414 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 14:12:49,193 - INFO - train.py[:55] - Set Random Sed: 3
+2020-09-10 14:12:49,805 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 14:12:49,806 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 14:12:49,806 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 14:12:49,807 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 14:12:49,807 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 14:12:49,807 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 14:12:49,808 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 14:12:49,808 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 14:12:49,808 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 14:12:49,808 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 14:12:49,809 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 14:12:49,920 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 14:12:49,920 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 14:12:49,921 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 14:12:49,921 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 14:12:49,921 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 14:12:49,922 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 14:12:49,922 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 14:12:49,922 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 14:12:49,922 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 14:12:49,923 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 14:12:49,923 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 14:21:04,803 - INFO - train.py[:55] - Set Random Sed: 3
+2020-09-10 14:21:05,094 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 14:21:05,094 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 14:21:05,094 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 14:21:05,094 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 14:21:05,095 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 14:21:05,095 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 14:21:05,095 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 14:21:05,095 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 14:21:05,095 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 14:21:05,095 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 14:21:05,095 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 14:21:05,149 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 14:21:05,149 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 14:21:05,149 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 14:21:05,149 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 14:21:05,150 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 14:21:05,150 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 14:21:05,150 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 14:21:05,150 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 14:21:05,150 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 14:21:05,150 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 14:21:05,150 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 14:21:23,407 - INFO - train.py[:147] - [Epoch: 1,Iteration: 1] loss:2.307034  lr= 0.001000  time=10.51 s
+2020-09-10 14:21:59,425 - INFO - train.py[:147] - [Epoch: 1,Iteration: 100] loss:0.172019  lr= 0.001000  time=0.34 s
+2020-09-10 14:22:34,553 - INFO - train.py[:151] - One epoch spend 1.4188109358151755 minutes!!!!
+2020-09-10 14:22:44,942 - INFO - train.py[:38] - One Epoch val acc: 0.9067
+2020-09-10 14:22:50,018 - INFO - train.py[:147] - [Epoch: 2,Iteration: 1] loss:0.131152  lr= 0.001000  time=1.18 s
+2020-09-10 14:23:27,075 - INFO - train.py[:147] - [Epoch: 2,Iteration: 100] loss:0.161997  lr= 0.001000  time=0.36 s
+2020-09-10 14:24:01,641 - INFO - train.py[:151] - One epoch spend 1.2782453815142314 minutes!!!!
+2020-09-10 14:24:12,627 - INFO - train.py[:38] - One Epoch val acc: 0.9376
+2020-09-10 14:24:17,578 - INFO - train.py[:147] - [Epoch: 3,Iteration: 1] loss:0.123166  lr= 0.001000  time=1.02 s
+2020-09-10 14:24:54,004 - INFO - train.py[:147] - [Epoch: 3,Iteration: 100] loss:0.060030  lr= 0.001000  time=0.34 s
+2020-09-10 14:25:28,341 - INFO - train.py[:151] - One epoch spend 1.261786198616028 minutes!!!!
+2020-09-10 14:25:38,774 - INFO - train.py[:38] - One Epoch val acc: 0.9417
+2020-09-10 14:25:43,746 - INFO - train.py[:147] - [Epoch: 4,Iteration: 1] loss:0.078584  lr= 0.001000  time=0.89 s
+2020-09-10 14:26:21,114 - INFO - train.py[:147] - [Epoch: 4,Iteration: 100] loss:0.046659  lr= 0.001000  time=0.35 s
+2020-09-10 14:26:56,376 - INFO - train.py[:151] - One epoch spend 1.293303116162618 minutes!!!!
+2020-09-10 14:27:06,832 - INFO - train.py[:38] - One Epoch val acc: 0.9389
+2020-09-10 14:27:11,944 - INFO - train.py[:147] - [Epoch: 5,Iteration: 1] loss:0.077384  lr= 0.000100  time=1.00 s
+2020-09-10 14:27:48,535 - INFO - train.py[:147] - [Epoch: 5,Iteration: 100] loss:0.041730  lr= 0.000100  time=0.34 s
+2020-09-10 14:28:22,982 - INFO - train.py[:151] - One epoch spend 1.2690524617830912 minutes!!!!
+2020-09-10 14:28:33,467 - INFO - train.py[:38] - One Epoch val acc: 0.9688
+2020-09-10 14:28:38,828 - INFO - train.py[:147] - [Epoch: 6,Iteration: 1] loss:0.014261  lr= 0.000100  time=1.02 s
+2020-09-10 14:29:15,480 - INFO - train.py[:147] - [Epoch: 6,Iteration: 100] loss:0.027636  lr= 0.000100  time=0.34 s
+2020-09-10 14:29:50,246 - INFO - train.py[:151] - One epoch spend 1.27957839568456 minutes!!!!
+2020-09-10 14:30:00,641 - INFO - train.py[:38] - One Epoch val acc: 0.9684
+2020-09-10 14:30:05,943 - INFO - train.py[:147] - [Epoch: 7,Iteration: 1] loss:0.018805  lr= 0.000100  time=0.96 s
+2020-09-10 14:30:42,235 - INFO - train.py[:147] - [Epoch: 7,Iteration: 100] loss:0.010850  lr= 0.000100  time=0.34 s
+2020-09-10 14:31:16,526 - INFO - train.py[:151] - One epoch spend 1.264643677075704 minutes!!!!
+2020-09-10 14:31:26,853 - INFO - train.py[:38] - One Epoch val acc: 0.9696
+2020-09-10 14:31:32,186 - INFO - train.py[:147] - [Epoch: 8,Iteration: 1] loss:0.030483  lr= 0.000100  time=1.45 s
+2020-09-10 14:32:08,555 - INFO - train.py[:147] - [Epoch: 8,Iteration: 100] loss:0.018909  lr= 0.000100  time=0.34 s
+2020-09-10 14:32:42,859 - INFO - train.py[:151] - One epoch spend 1.2666782061258952 minutes!!!!
+2020-09-10 14:32:53,362 - INFO - train.py[:38] - One Epoch val acc: 0.9707
+2020-09-10 14:32:58,795 - INFO - train.py[:147] - [Epoch: 9,Iteration: 1] loss:0.011561  lr= 0.000100  time=0.89 s
+2020-09-10 14:33:35,573 - INFO - train.py[:147] - [Epoch: 9,Iteration: 100] loss:0.009407  lr= 0.000100  time=0.34 s
+2020-09-10 14:34:10,656 - INFO - train.py[:151] - One epoch spend 1.2881490429242453 minutes!!!!
+2020-09-10 14:34:21,154 - INFO - train.py[:38] - One Epoch val acc: 0.9719
+2020-09-10 14:34:26,610 - INFO - train.py[:147] - [Epoch: 10,Iteration: 1] loss:0.005901  lr= 0.000010  time=0.99 s
+2020-09-10 14:35:02,919 - INFO - train.py[:147] - [Epoch: 10,Iteration: 100] loss:0.004988  lr= 0.000010  time=0.33 s
+2020-09-10 14:35:37,434 - INFO - train.py[:151] - One epoch spend 1.2712647000948587 minutes!!!!
+2020-09-10 14:35:48,026 - INFO - train.py[:38] - One Epoch val acc: 0.972
+2020-09-10 14:35:50,753 - INFO - general_utils.py[:218] - Save onnx model to ./train_out/cifar10/efficientnet-b0/10_0.972.onnx
+2020-09-10 14:35:50,869 - INFO - train.py[:55] - Set Random Sed: 3
+2020-09-10 14:35:51,620 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 14:35:51,620 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 14:35:51,620 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 14:35:51,621 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 14:35:51,621 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 14:35:51,621 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 14:35:51,621 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 14:35:51,621 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 14:35:51,621 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 14:35:51,621 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 14:35:51,621 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 14:35:51,681 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 14:35:51,682 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 14:35:51,682 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 14:35:51,682 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 14:35:51,682 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 14:35:51,682 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 14:35:51,682 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 14:35:51,682 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 14:35:51,683 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 14:35:51,683 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 14:35:51,683 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 14:35:59,711 - INFO - train.py[:147] - [Epoch: 1,Iteration: 1] loss:2.346183  lr= 0.001000  time=1.80 s
+2020-09-10 14:36:47,448 - INFO - train.py[:147] - [Epoch: 1,Iteration: 100] loss:0.527776  lr= 0.001000  time=0.53 s
+2020-09-10 14:37:34,096 - INFO - train.py[:151] - One epoch spend 1.6940414508183796 minutes!!!!
+2020-09-10 14:37:47,949 - INFO - train.py[:38] - One Epoch val acc: 0.8224
+2020-09-10 14:37:54,476 - INFO - train.py[:147] - [Epoch: 2,Iteration: 1] loss:0.431280  lr= 0.001000  time=0.76 s
+2020-09-10 14:38:42,333 - INFO - train.py[:147] - [Epoch: 2,Iteration: 100] loss:0.385407  lr= 0.001000  time=0.46 s
+2020-09-10 14:39:28,656 - INFO - train.py[:151] - One epoch spend 1.6783735036849976 minutes!!!!
+2020-09-10 14:39:42,679 - INFO - train.py[:38] - One Epoch val acc: 0.8491
+2020-09-10 14:39:48,612 - INFO - train.py[:147] - [Epoch: 3,Iteration: 1] loss:0.268454  lr= 0.001000  time=0.67 s
+2020-09-10 14:40:36,248 - INFO - train.py[:147] - [Epoch: 3,Iteration: 100] loss:0.334667  lr= 0.001000  time=0.45 s
+2020-09-10 14:41:22,280 - INFO - train.py[:151] - One epoch spend 1.6599369168281555 minutes!!!!
+2020-09-10 14:41:36,363 - INFO - train.py[:38] - One Epoch val acc: 0.8739
+2020-09-10 14:41:41,893 - INFO - train.py[:147] - [Epoch: 4,Iteration: 1] loss:0.252698  lr= 0.001000  time=0.72 s
+2020-09-10 14:42:29,839 - INFO - train.py[:147] - [Epoch: 4,Iteration: 100] loss:0.188802  lr= 0.001000  time=0.47 s
+2020-09-10 14:43:15,929 - INFO - train.py[:151] - One epoch spend 1.6593389789263406 minutes!!!!
+2020-09-10 14:43:29,516 - INFO - train.py[:38] - One Epoch val acc: 0.8763
+2020-09-10 14:43:35,132 - INFO - train.py[:147] - [Epoch: 5,Iteration: 1] loss:0.222544  lr= 0.000100  time=0.81 s
+2020-09-10 14:44:23,348 - INFO - train.py[:147] - [Epoch: 5,Iteration: 100] loss:0.100599  lr= 0.000100  time=0.48 s
+2020-09-10 14:45:09,716 - INFO - train.py[:151] - One epoch spend 1.6699455777804058 minutes!!!!
+2020-09-10 14:45:23,811 - INFO - train.py[:38] - One Epoch val acc: 0.9479
+2020-09-10 14:45:29,633 - INFO - train.py[:147] - [Epoch: 6,Iteration: 1] loss:0.052585  lr= 0.000100  time=0.67 s
+2020-09-10 14:46:17,801 - INFO - train.py[:147] - [Epoch: 6,Iteration: 100] loss:0.090866  lr= 0.000100  time=0.46 s
+2020-09-10 14:47:09,089 - INFO - train.py[:151] - One epoch spend 1.754529893398285 minutes!!!!
+2020-09-10 14:47:23,153 - INFO - train.py[:38] - One Epoch val acc: 0.9511
+2020-09-10 14:47:29,161 - INFO - train.py[:147] - [Epoch: 7,Iteration: 1] loss:0.057804  lr= 0.000100  time=0.71 s
+2020-09-10 14:48:20,100 - INFO - train.py[:147] - [Epoch: 7,Iteration: 100] loss:0.071137  lr= 0.000100  time=1.15 s
+2020-09-10 14:49:06,953 - INFO - train.py[:151] - One epoch spend 1.7299125909805297 minutes!!!!
+2020-09-10 14:49:20,791 - INFO - train.py[:38] - One Epoch val acc: 0.9545
+2020-09-10 14:49:27,033 - INFO - train.py[:147] - [Epoch: 8,Iteration: 1] loss:0.048962  lr= 0.000100  time=0.79 s
+2020-09-10 14:50:16,676 - INFO - train.py[:147] - [Epoch: 8,Iteration: 100] loss:0.019521  lr= 0.000100  time=0.47 s
+2020-09-10 14:51:03,483 - INFO - train.py[:151] - One epoch spend 1.711462378501892 minutes!!!!
+2020-09-10 14:51:17,606 - INFO - train.py[:38] - One Epoch val acc: 0.9533
+2020-09-10 14:51:23,108 - INFO - train.py[:147] - [Epoch: 9,Iteration: 1] loss:0.028328  lr= 0.000100  time=0.78 s
+2020-09-10 14:52:12,285 - INFO - train.py[:147] - [Epoch: 9,Iteration: 100] loss:0.023406  lr= 0.000100  time=0.46 s
+2020-09-10 14:52:58,605 - INFO - train.py[:151] - One epoch spend 1.683260440826416 minutes!!!!
+2020-09-10 14:53:12,178 - INFO - train.py[:38] - One Epoch val acc: 0.9526
+2020-09-10 14:53:17,902 - INFO - train.py[:147] - [Epoch: 10,Iteration: 1] loss:0.033523  lr= 0.000010  time=0.81 s
+2020-09-10 14:54:07,206 - INFO - train.py[:147] - [Epoch: 10,Iteration: 100] loss:0.023524  lr= 0.000010  time=0.46 s
+2020-09-10 14:54:55,138 - INFO - train.py[:151] - One epoch spend 1.7159375031789144 minutes!!!!
+2020-09-10 14:55:08,961 - INFO - train.py[:38] - One Epoch val acc: 0.954
+2020-09-10 14:55:12,352 - INFO - general_utils.py[:218] - Save onnx model to ./train_out/cifar10/resnet50/10_0.9545.onnx
+2020-09-10 15:40:45,318 - INFO - train.py[:55] - Set Random Sed: 3
+2020-09-10 15:40:45,762 - INFO - folder_dataloader.py[:126] - Training Set
+2020-09-10 15:40:45,762 - INFO - general_utils.py[:150] - Num of "0" class: 5000
+2020-09-10 15:40:45,762 - INFO - general_utils.py[:150] - Num of "1" class: 5000
+2020-09-10 15:40:45,762 - INFO - general_utils.py[:150] - Num of "2" class: 5000
+2020-09-10 15:40:45,762 - INFO - general_utils.py[:150] - Num of "3" class: 5000
+2020-09-10 15:40:45,762 - INFO - general_utils.py[:150] - Num of "4" class: 5000
+2020-09-10 15:40:45,762 - INFO - general_utils.py[:150] - Num of "5" class: 5000
+2020-09-10 15:40:45,762 - INFO - general_utils.py[:150] - Num of "6" class: 5000
+2020-09-10 15:40:45,762 - INFO - general_utils.py[:150] - Num of "7" class: 5000
+2020-09-10 15:40:45,762 - INFO - general_utils.py[:150] - Num of "8" class: 5000
+2020-09-10 15:40:45,762 - INFO - general_utils.py[:150] - Num of "9" class: 5000
+2020-09-10 15:40:45,822 - INFO - folder_dataloader.py[:128] - Val Set
+2020-09-10 15:40:45,823 - INFO - general_utils.py[:150] - Num of "0" class: 1000
+2020-09-10 15:40:45,823 - INFO - general_utils.py[:150] - Num of "1" class: 1000
+2020-09-10 15:40:45,823 - INFO - general_utils.py[:150] - Num of "2" class: 1000
+2020-09-10 15:40:45,823 - INFO - general_utils.py[:150] - Num of "3" class: 1000
+2020-09-10 15:40:45,823 - INFO - general_utils.py[:150] - Num of "4" class: 1000
+2020-09-10 15:40:45,823 - INFO - general_utils.py[:150] - Num of "5" class: 1000
+2020-09-10 15:40:45,823 - INFO - general_utils.py[:150] - Num of "6" class: 1000
+2020-09-10 15:40:45,823 - INFO - general_utils.py[:150] - Num of "7" class: 1000
+2020-09-10 15:40:45,823 - INFO - general_utils.py[:150] - Num of "8" class: 1000
+2020-09-10 15:40:45,823 - INFO - general_utils.py[:150] - Num of "9" class: 1000
+2020-09-10 15:41:07,041 - INFO - train.py[:147] - [Epoch: 1,Iteration: 1] loss:2.307034  lr= 0.001000  time=10.28 s
+2020-09-10 15:41:42,863 - INFO - train.py[:147] - [Epoch: 1,Iteration: 100] loss:0.172018  lr= 0.001000  time=0.34 s
+2020-09-10 15:42:17,070 - INFO - train.py[:151] - One epoch spend 1.4083068370819092 minutes!!!!
+2020-09-10 15:42:27,420 - INFO - train.py[:38] - One Epoch val acc: 0.9065
+2020-09-10 15:42:32,110 - INFO - train.py[:147] - [Epoch: 2,Iteration: 1] loss:0.131168  lr= 0.001000  time=0.93 s

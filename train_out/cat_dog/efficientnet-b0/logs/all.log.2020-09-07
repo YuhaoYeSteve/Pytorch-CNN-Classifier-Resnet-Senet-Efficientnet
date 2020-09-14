@@ -1,0 +1,4 @@
+2020-09-07 15:09:47,788 - INFO - train.py[:54] - Set Random Sed: 3
+2020-09-07 15:09:48,005 - INFO - folder_dataloader.py[:125] - Training Set
+2020-09-07 15:09:48,005 - INFO - general_utils.py[:150] - Num of "0" class: 8501
+2020-09-07 15:09:48,006 - INFO - general_utils.py[:150] - Num of "1" class: 8500
